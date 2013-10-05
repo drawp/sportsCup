@@ -44,7 +44,7 @@ static User* _user = nil;
 -(id) init {
     if(self = [super init])
     {
-        self.eventArray = nil;
+        _user.eventArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -52,14 +52,15 @@ static User* _user = nil;
 
 -(void) setName:(NSString*)name twitterHandle:(NSString*)handle address:(NSString*)address andImage:(UIImage *)img{
 
-    self.userName = name;
-    self.twitterHandle=handle;
-    self.userAddress = address;
-    self.image = img;
+    _user.userName = name;
+    _user.twitterHandle=handle;
+    _user.userAddress = address;
+    _user.image = img;
 }
 
 -(void)addEvent:(Event *)event {
-    [self.eventArray addObject:event];
+    [_user.eventArray addObject:event];
+    NSLog(@"event %@ has been added to user %@ with %i events",event.name,_user.userName,[_user.eventArray count]);
 }
 
 
@@ -73,6 +74,8 @@ static User* _user = nil;
     [twitterController setTwitterUserInfo:(self)];
     NSLog(@"%@", self);
     
+    //if there are events
+    
     //choose a random date for all events - CREATE DATE INFO
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents* comp1 = [[NSDateComponents alloc] init];
@@ -82,13 +85,15 @@ static User* _user = nil;
     NSDate* date1 = [calendar dateFromComponents:comp1];
     
     //choose two random events
-    Event* event1 = [Event initWithName:@"event1" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us!"];
+    Event* event1 = [[Event alloc]initWithName:@"event1" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us!"] ;
     
-    Event* event2 = [Event initWithName:@"event2" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us also!"];
+    Event* event2 = [[Event alloc] initWithName:@"event2" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us also!"];
 
     //add the events to the user
     [self addEvent:event1];
     [self addEvent:event2];
+    
+    NSLog(@"the event has been called");
     
 }
 
