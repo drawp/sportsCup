@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SCSimpleSLRequestDemo.h"
+#import "user.h"
 
 @interface FirstViewController ()
 
@@ -17,10 +18,14 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"testing");
-    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
-    [test fetchTimelineForUser:(@"ID_AA_Carmack")];
-    NSLog(@"testing2");
+//    NSLog(@"testing");
+//    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
+//    [test setTwitterUserInfo];
+//    [test fetchTimelineForUser:(@"starbucks")];
+//    NSLog(@"testing2");
+    User *myUser = [User sharedInstance];
+    [myUser reloadData];
+    NSLog(@"%@", myUser);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

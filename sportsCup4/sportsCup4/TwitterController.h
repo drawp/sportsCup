@@ -1,5 +1,5 @@
 //
-//  SCSimpleSLRequestDemo.h
+//  TwitterController.h
 //  sportsCup4
 //
 //  Created by Ben Juhn on 10/5/13.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
-@interface SCSimpleSLRequestDemo : NSObject
-- (void)fetchTimelineForUser:(NSString *)username;
-- (void)setTwitterUserInfo;
+@interface TwitterController : NSObject
+- (void)setTwitterUserInfo:(User *)user;
 @end

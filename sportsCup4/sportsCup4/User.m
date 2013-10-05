@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "Event.h"
+#import "TwitterController.h"
 
 @implementation User
 
@@ -66,7 +67,11 @@ static User* _user = nil;
     // THE FOLLOWING SETUP CALLS ARE DUMMIES THAT MUST BE REPLACED
     
     //setup the user - REPLACE
-    [self setName:@"Black magic" twitterHandle:@"@BlackMagic" address:@"1400 Lombard" andImage:[[UIImage alloc]init]];
+//    [self setName:@"Black magic" twitterHandle:@"@BlackMagic" address:@"1400 Lombard" andImage:[[UIImage alloc]init]];
+    
+    TwitterController *twitterController = [[TwitterController alloc] init];
+    [twitterController setTwitterUserInfo:(self)];
+    NSLog(@"%@", self);
     
     //choose a random date for all events - CREATE DATE INFO
     NSCalendar *calendar = [NSCalendar currentCalendar];

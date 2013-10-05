@@ -10,6 +10,7 @@
 		7E625E381800AB980026228D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E625E361800AB980026228D /* Main_iPad.storyboard */; };
 		7E625E391800AB980026228D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E625E371800AB980026228D /* Main_iPhone.storyboard */; };
 		7E625E3C1800ACF80026228D /* SCSimpleSLRequestDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */; };
+		7E625E3F1800CD620026228D /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E3E1800CD620026228D /* TwitterController.m */; };
 		995A9C2E1800029B0040166C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2D1800029B0040166C /* Foundation.framework */; };
 		995A9C301800029B0040166C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2F1800029B0040166C /* CoreGraphics.framework */; };
 		995A9C321800029B0040166C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C311800029B0040166C /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		7E625E371800AB980026228D /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		7E625E3A1800ACF80026228D /* SCSimpleSLRequestDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSimpleSLRequestDemo.h; sourceTree = "<group>"; };
 		7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSimpleSLRequestDemo.m; sourceTree = "<group>"; };
+		7E625E3D1800CD620026228D /* TwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterController.h; sourceTree = "<group>"; };
+		7E625E3E1800CD620026228D /* TwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterController.m; sourceTree = "<group>"; };
 		995A9C2A1800029B0040166C /* sportsCup4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsCup4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		995A9C2D1800029B0040166C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		995A9C2F1800029B0040166C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -189,6 +192,8 @@
 				995A9C69180009D10040166C /* EventsTableViewController.m */,
 				995A9C6B180015470040166C /* EventDetailViewController.h */,
 				995A9C6C180015470040166C /* EventDetailViewController.m */,
+				7E625E3D1800CD620026228D /* TwitterController.h */,
+				7E625E3E1800CD620026228D /* TwitterController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E625E3F1800CD620026228D /* TwitterController.m in Sources */,
 				995A9C7B1800BF0F0040166C /* User.m in Sources */,
 				995A9C6D180015470040166C /* EventDetailViewController.m in Sources */,
 				995A9C4A1800029B0040166C /* SecondViewController.m in Sources */,
