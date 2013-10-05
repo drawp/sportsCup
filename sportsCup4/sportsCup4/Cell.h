@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Cell : UITableViewCell
+@interface Cell : UITableViewCell {
+    IBOutlet UILabel* label;
+}
+
+@property (nonatomic, retain) IBOutlet UILabel* label;
 
 @end

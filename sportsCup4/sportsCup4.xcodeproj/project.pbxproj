@@ -131,8 +131,6 @@
 				995A9C75180091810040166C /* Model */,
 				995A9C741800913E0040166C /* Controllers */,
 				995A9C341800029B0040166C /* Supporting Files */,
-				995A9C71180018AE0040166C /* Cell.h */,
-				995A9C72180018AE0040166C /* Cell.m */,
 			);
 			path = sportsCup4;
 			sourceTree = "<group>";
@@ -172,14 +170,14 @@
 		995A9C741800913E0040166C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				995A9C451800029B0040166C /* FirstViewController.h */,
+				995A9C461800029B0040166C /* FirstViewController.m */,
+				995A9C481800029B0040166C /* SecondViewController.h */,
 				995A9C491800029B0040166C /* SecondViewController.m */,
 				995A9C68180009D10040166C /* EventsTableViewController.h */,
 				995A9C69180009D10040166C /* EventsTableViewController.m */,
 				995A9C6B180015470040166C /* EventDetailViewController.h */,
 				995A9C6C180015470040166C /* EventDetailViewController.m */,
-				995A9C451800029B0040166C /* FirstViewController.h */,
-				995A9C461800029B0040166C /* FirstViewController.m */,
-				995A9C481800029B0040166C /* SecondViewController.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +185,8 @@
 		995A9C75180091810040166C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				995A9C71180018AE0040166C /* Cell.h */,
+				995A9C72180018AE0040166C /* Cell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
