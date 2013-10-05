@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Cell : UITableViewCell {
-    IBOutlet UILabel* label;
+    IBOutlet UILabel* infoLabel;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel* label;
+@property (nonatomic, retain) IBOutlet UILabel* infoLabel;
+@property (nonatomic, retain) IBOutlet UIView* infoView;
 
 @end
