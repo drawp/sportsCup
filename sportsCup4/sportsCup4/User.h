@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSString* twitterHandle;
 @property (nonatomic, retain) NSString* userAddress;
 
--(id) initWithName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address;
++(User*) sharedInstance;
+-(void) setName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address;
 
 @end

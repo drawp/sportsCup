@@ -15,15 +15,43 @@
 @synthesize twitterHandle;
 @synthesize  userAddress;
 
--(id) initWithName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address{
-    if (self = [super init]) {
-        self.eventArray = nil;
-        self.userName = name;
-        self.twitterHandle=handle;
-        self.userAddress = address;
+static User* _user = nil;
+
++(User*) sharedInstance {
+	@synchronized([User class])
+	{
+		if (!_user)
+			_user= [[self alloc] init];
+		return _user;
+	}
+	return nil;
+}
+
++(id) alloc {
+    @synchronized ([User class])
+    {
+        NSAssert(_user == nil,
+				 @"Attempted to allocate a second instance of the user singleton");
+		_user = [super alloc];
+		return _user;
     }
-    
+    return nil;
+}
+
+-(id) init {
+    if(self = [super init])
+    {
+        self.eventArray = nil;
+    }
     return self;
+}
+
+
+-(void) setName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address{
+
+    self.userName = name;
+    self.twitterHandle=handle;
+    self.userAddress = address;
 }
 
 @end
