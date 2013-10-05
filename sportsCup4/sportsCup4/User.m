@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "Event.h"
 
 @implementation User
 
@@ -14,6 +15,7 @@
 @synthesize userName;
 @synthesize twitterHandle;
 @synthesize  userAddress;
+@synthesize image;
 
 static User* _user = nil;
 
@@ -47,14 +49,41 @@ static User* _user = nil;
 }
 
 
--(void) setName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address{
+-(void) setName:(NSString*)name twitterHandle:(NSString*)handle address:(NSString*)address andImage:(UIImage *)img{
 
     self.userName = name;
     self.twitterHandle=handle;
     self.userAddress = address;
+    self.image = img;
 }
 
+-(void)addEvent:(Event *)event {
+    [self.eventArray addObject:event];
+}
+
+
 -(void) reloadData {
+    // THE FOLLOWING SETUP CALLS ARE DUMMIES THAT MUST BE REPLACED
+    
+    //setup the user - REPLACE
+    [self setName:@"Black magic" twitterHandle:@"@BlackMagic" address:@"1400 Lombard" andImage:[[UIImage alloc]init]];
+    
+    //choose a random date for all events - CREATE DATE INFO
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents* comp1 = [[NSDateComponents alloc] init];
+    [comp1 setDay:5];
+    [comp1 setMonth:4];
+    [comp1 setYear:2013];
+    NSDate* date1 = [calendar dateFromComponents:comp1];
+    
+    //choose two random events
+    Event* event1 = [Event initWithName:@"event1" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us!"];
+    
+    Event* event2 = [Event initWithName:@"event2" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us also!"];
+
+    //add the events to the user
+    [self addEvent:event1];
+    [self addEvent:event2];
     
 }
 
