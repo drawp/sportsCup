@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E625E381800AB980026228D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E625E361800AB980026228D /* Main_iPad.storyboard */; };
+		7E625E391800AB980026228D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E625E371800AB980026228D /* Main_iPhone.storyboard */; };
+		7E625E3C1800ACF80026228D /* SCSimpleSLRequestDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */; };
 		995A9C2E1800029B0040166C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2D1800029B0040166C /* Foundation.framework */; };
 		995A9C301800029B0040166C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2F1800029B0040166C /* CoreGraphics.framework */; };
 		995A9C321800029B0040166C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C311800029B0040166C /* UIKit.framework */; };
 		995A9C381800029B0040166C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 995A9C361800029B0040166C /* InfoPlist.strings */; };
 		995A9C3A1800029B0040166C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C391800029B0040166C /* main.m */; };
 		995A9C3E1800029B0040166C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C3D1800029B0040166C /* AppDelegate.m */; };
-		995A9C411800029B0040166C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995A9C3F1800029B0040166C /* Main_iPhone.storyboard */; };
-		995A9C441800029B0040166C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995A9C421800029B0040166C /* Main_iPad.storyboard */; };
 		995A9C471800029B0040166C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C461800029B0040166C /* FirstViewController.m */; };
 		995A9C4A1800029B0040166C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C491800029B0040166C /* SecondViewController.m */; };
 		995A9C4C1800029B0040166C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 995A9C4B1800029B0040166C /* Images.xcassets */; };
@@ -39,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E625E361800AB980026228D /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		7E625E371800AB980026228D /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		7E625E3A1800ACF80026228D /* SCSimpleSLRequestDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSimpleSLRequestDemo.h; sourceTree = "<group>"; };
+		7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSimpleSLRequestDemo.m; sourceTree = "<group>"; };
 		995A9C2A1800029B0040166C /* sportsCup4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsCup4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		995A9C2D1800029B0040166C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		995A9C2F1800029B0040166C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,14 +54,12 @@
 		995A9C3B1800029B0040166C /* sportsCup4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sportsCup4-Prefix.pch"; sourceTree = "<group>"; };
 		995A9C3C1800029B0040166C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		995A9C3D1800029B0040166C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		995A9C401800029B0040166C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		995A9C431800029B0040166C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		995A9C451800029B0040166C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		995A9C461800029B0040166C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		995A9C481800029B0040166C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		995A9C491800029B0040166C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		995A9C4B1800029B0040166C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
-		995A9C511800029B0040166C /* sportsCup4Tests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = sportsCup4Tests; path = sportsCup4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		995A9C511800029B0040166C /* sportsCup4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sportsCup4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		995A9C521800029B0040166C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		995A9C5A1800029B0040166C /* sportsCup4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sportsCup4Tests-Info.plist"; sourceTree = "<group>"; };
 		995A9C5C1800029B0040166C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -107,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				995A9C2A1800029B0040166C /* sportsCup4.app */,
-				995A9C511800029B0040166C /* sportsCup4Tests */,
+				995A9C511800029B0040166C /* sportsCup4Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,12 +142,14 @@
 			isa = PBXGroup;
 			children = (
 				995A9C4B1800029B0040166C /* Images.xcassets */,
-				995A9C3F1800029B0040166C /* Main_iPhone.storyboard */,
-				995A9C421800029B0040166C /* Main_iPad.storyboard */,
+				7E625E361800AB980026228D /* Main_iPad.storyboard */,
+				7E625E371800AB980026228D /* Main_iPhone.storyboard */,
 				995A9C351800029B0040166C /* sportsCup4-Info.plist */,
 				995A9C361800029B0040166C /* InfoPlist.strings */,
 				995A9C391800029B0040166C /* main.m */,
 				995A9C3B1800029B0040166C /* sportsCup4-Prefix.pch */,
+				7E625E3A1800ACF80026228D /* SCSimpleSLRequestDemo.h */,
+				7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,7 +231,7 @@
 			);
 			name = sportsCup4Tests;
 			productName = sportsCup4Tests;
-			productReference = 995A9C511800029B0040166C /* sportsCup4Tests */;
+			productReference = 995A9C511800029B0040166C /* sportsCup4Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -267,9 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				995A9C441800029B0040166C /* Main_iPad.storyboard in Resources */,
+				7E625E391800AB980026228D /* Main_iPhone.storyboard in Resources */,
+				7E625E381800AB980026228D /* Main_iPad.storyboard in Resources */,
 				995A9C4C1800029B0040166C /* Images.xcassets in Resources */,
-				995A9C411800029B0040166C /* Main_iPhone.storyboard in Resources */,
 				995A9C381800029B0040166C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +301,7 @@
 				995A9C6A180009D10040166C /* EventsTableViewController.m in Sources */,
 				995A9C3A1800029B0040166C /* main.m in Sources */,
 				995A9C73180018AE0040166C /* Cell.m in Sources */,
+				7E625E3C1800ACF80026228D /* SCSimpleSLRequestDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,22 +330,6 @@
 				995A9C371800029B0040166C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		995A9C3F1800029B0040166C /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				995A9C401800029B0040166C /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		995A9C421800029B0040166C /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				995A9C431800029B0040166C /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		995A9C5B1800029B0040166C /* InfoPlist.strings */ = {

@@ -71,19 +71,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Cell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
     if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     NSLog(@"the cell is %@", cell);
 
     // Configure the cell...
     NSInteger row = [indexPath row];
+    cell.infoLabel.text=[eventsArray objectAtIndex:row];
     NSLog(@"the word that should appear in row=%i is %@",row,[eventsArray objectAtIndex:row]);
-    [[cell textLabel] setText:[eventsArray objectAtIndex:row]];
+    //[[cell textLabel] setText:[eventsArray objectAtIndex:row]];
     
     return cell;
 }

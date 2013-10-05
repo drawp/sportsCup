@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "SCSimpleSLRequestDemo.h"
 
 @interface FirstViewController ()
 
@@ -16,6 +17,10 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"testing");
+    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
+    [test fetchTimelineForUser:(@"ID_AA_Carmack")];
+    NSLog(@"testing2");
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
