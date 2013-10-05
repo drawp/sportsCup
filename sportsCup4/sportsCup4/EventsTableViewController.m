@@ -9,6 +9,8 @@
 #import "EventsTableViewController.h"
 #import "EventDetailViewController.h"
 #import "Cell.h"
+#import "User.h"
+#import "Event.h"
 
 @interface EventsTableViewController ()
 
@@ -33,8 +35,10 @@
 {
     [super viewDidLoad];
     
-    NSMutableArray* tempArray = [NSMutableArray arrayWithObjects:@"tonight",@"tomorrow",@"the day after", nil];
-    self.eventsArray = tempArray;
+    [[User sharedInstance] reloadData];
+    
+    //self.eventsArray = [[NSMutableArray alloc] initWithObjects:@"today",@"tomorrow", nil];
+    self.eventsArray = [User sharedInstance].eventArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);
 
     // Uncomment the following line to preserve selection between presentations.
@@ -80,7 +84,8 @@
 
     // Configure the cell...
     NSInteger row = [indexPath row];
-    cell.infoLabel.text=[eventsArray objectAtIndex:row];
+    Event* event = (Event*)[eventsArray objectAtIndex:row];
+    cell.infoLabel.text=event.name;
     NSLog(@"the word that should appear in row=%i is %@",row,[eventsArray objectAtIndex:row]);
     //[[cell textLabel] setText:[eventsArray objectAtIndex:row]];
     

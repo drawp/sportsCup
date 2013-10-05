@@ -16,6 +16,6 @@
 @property (nonatomic, retain) NSString* originalTweet;
 @property (nonatomic, retain) NSNumber* RSVPs;
 
-+(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet;
+-(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet;
 
 @end
