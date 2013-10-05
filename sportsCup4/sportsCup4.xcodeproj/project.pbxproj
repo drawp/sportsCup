@@ -56,7 +56,7 @@
 		995A9C481800029B0040166C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		995A9C491800029B0040166C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		995A9C4B1800029B0040166C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
-		995A9C511800029B0040166C /* sportsCup4Tests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = sportsCup4Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		995A9C511800029B0040166C /* sportsCup4Tests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = sportsCup4Tests; path = sportsCup4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		995A9C521800029B0040166C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		995A9C5A1800029B0040166C /* sportsCup4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sportsCup4Tests-Info.plist"; sourceTree = "<group>"; };
 		995A9C5C1800029B0040166C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -128,17 +128,8 @@
 			children = (
 				995A9C3C1800029B0040166C /* AppDelegate.h */,
 				995A9C3D1800029B0040166C /* AppDelegate.m */,
-				995A9C3F1800029B0040166C /* Main_iPhone.storyboard */,
-				995A9C421800029B0040166C /* Main_iPad.storyboard */,
-				995A9C451800029B0040166C /* FirstViewController.h */,
-				995A9C461800029B0040166C /* FirstViewController.m */,
-				995A9C481800029B0040166C /* SecondViewController.h */,
-				995A9C491800029B0040166C /* SecondViewController.m */,
-				995A9C68180009D10040166C /* EventsTableViewController.h */,
-				995A9C69180009D10040166C /* EventsTableViewController.m */,
-				995A9C6B180015470040166C /* EventDetailViewController.h */,
-				995A9C6C180015470040166C /* EventDetailViewController.m */,
-				995A9C4B1800029B0040166C /* Images.xcassets */,
+				995A9C75180091810040166C /* Model */,
+				995A9C741800913E0040166C /* Controllers */,
 				995A9C341800029B0040166C /* Supporting Files */,
 				995A9C71180018AE0040166C /* Cell.h */,
 				995A9C72180018AE0040166C /* Cell.m */,
@@ -149,6 +140,9 @@
 		995A9C341800029B0040166C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				995A9C4B1800029B0040166C /* Images.xcassets */,
+				995A9C3F1800029B0040166C /* Main_iPhone.storyboard */,
+				995A9C421800029B0040166C /* Main_iPad.storyboard */,
 				995A9C351800029B0040166C /* sportsCup4-Info.plist */,
 				995A9C361800029B0040166C /* InfoPlist.strings */,
 				995A9C391800029B0040166C /* main.m */,
@@ -173,6 +167,28 @@
 				995A9C5B1800029B0040166C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		995A9C741800913E0040166C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				995A9C491800029B0040166C /* SecondViewController.m */,
+				995A9C68180009D10040166C /* EventsTableViewController.h */,
+				995A9C69180009D10040166C /* EventsTableViewController.m */,
+				995A9C6B180015470040166C /* EventDetailViewController.h */,
+				995A9C6C180015470040166C /* EventDetailViewController.m */,
+				995A9C451800029B0040166C /* FirstViewController.h */,
+				995A9C461800029B0040166C /* FirstViewController.m */,
+				995A9C481800029B0040166C /* SecondViewController.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		995A9C75180091810040166C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
