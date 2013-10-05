@@ -16,7 +16,7 @@
 @synthesize originalTweet;
 @synthesize RSVPs;
 
--(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSInteger*)eHour andOriginalTweet:(NSString*)eTweet {
+-(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet {
     
     if ( self = [super init] ) {
         self.name = eName;

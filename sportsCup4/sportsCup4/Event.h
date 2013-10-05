@@ -12,10 +12,10 @@
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSDate* date;
-@property (nonatomic, retain) NSInteger* hour;
+@property (nonatomic, retain) NSNumber* hour;
 @property (nonatomic, retain) NSString* originalTweet;
 @property (nonatomic, retain) NSNumber* RSVPs;
 
--(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSInteger*)eHour andOriginalTweet:(NSString*)eTweet;
+-(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet;
 
 @end
