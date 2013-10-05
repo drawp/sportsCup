@@ -54,4 +54,8 @@ static User* _user = nil;
     self.userAddress = address;
 }
 
+-(void) reloadData {
+    
+}
+
 @end

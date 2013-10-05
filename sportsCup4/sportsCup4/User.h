@@ -17,5 +17,6 @@
 
 +(User*) sharedInstance;
 -(void) setName:(NSString*)name twitterHandle:(NSString*)handle andAddress:(NSString*)address;
+-(void)reloadData; //method to be written with use of twitter controller. controller can get data and use setName method to update this class
 
 @end
