@@ -33,8 +33,6 @@
 {
     [super viewDidLoad];
     
-    self.title = @"My Events";
-    
     NSMutableArray* tempArray = [NSMutableArray arrayWithObjects:@"tonight",@"tomorrow",@"the day after", nil];
     self.eventsArray = tempArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);

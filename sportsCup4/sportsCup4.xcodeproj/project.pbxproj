@@ -27,6 +27,7 @@
 		995A9C6A180009D10040166C /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C69180009D10040166C /* EventsTableViewController.m */; };
 		995A9C6D180015470040166C /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C6C180015470040166C /* EventDetailViewController.m */; };
 		995A9C73180018AE0040166C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C72180018AE0040166C /* Cell.m */; };
+		995A9C781800BB010040166C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C771800BB010040166C /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		995A9C6C180015470040166C /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		995A9C71180018AE0040166C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		995A9C72180018AE0040166C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		995A9C761800BB010040166C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		995A9C771800BB010040166C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 			children = (
 				995A9C71180018AE0040166C /* Cell.h */,
 				995A9C72180018AE0040166C /* Cell.m */,
+				995A9C761800BB010040166C /* Event.h */,
+				995A9C771800BB010040166C /* Event.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				995A9C6D180015470040166C /* EventDetailViewController.m in Sources */,
 				995A9C4A1800029B0040166C /* SecondViewController.m in Sources */,
 				995A9C3E1800029B0040166C /* AppDelegate.m in Sources */,
+				995A9C781800BB010040166C /* Event.m in Sources */,
 				995A9C471800029B0040166C /* FirstViewController.m in Sources */,
 				995A9C6A180009D10040166C /* EventsTableViewController.m in Sources */,
 				995A9C3A1800029B0040166C /* main.m in Sources */,

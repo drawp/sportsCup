@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Events Table View Controller-->
+        <!--Events Table View Controller - Events-->
         <scene sceneID="Mmt-bt-bws">
             <objects>
                 <tableViewController id="Y4h-WE-NUN" customClass="EventsTableViewController" sceneMemberID="viewController">
@@ -57,11 +57,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="qGN-lL-u7Z" customClass="Cell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="qGN-lL-u7Z" customClass="Cell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qGN-lL-u7Z" id="kVv-80-L6f">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-6q-gCB">
@@ -75,6 +75,7 @@
                                 <connections>
                                     <outlet property="infoLabel" destination="7YH-6q-gCB" id="hue-Sm-pHJ"/>
                                     <outlet property="infoView" destination="tgI-30-Lf7" id="hQu-nK-WUq"/>
+                                    <segue destination="Wbh-O3-mMS" kind="push" identifier="showEventDetails" id="itc-yu-8en"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,13 +84,13 @@
                             <outlet property="delegate" destination="Y4h-WE-NUN" id="Fdk-Fi-QCi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dOh-uJ-i2e"/>
+                    <navigationItem key="navigationItem" title="Events" id="dOh-uJ-i2e"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUz-QK-RHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="545"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Event Detail View Controller - Event Details-->
         <scene sceneID="OV7-L9-wTS">
             <objects>
                 <viewController id="Wbh-O3-mMS" customClass="EventDetailViewController" sceneMemberID="viewController">
@@ -111,10 +112,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Event Details" id="Yvo-Sd-4Hw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAF-qd-oJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221" y="1281"/>
+            <point key="canvasLocation" x="1637" y="553"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
