@@ -11,6 +11,7 @@
 #import <Social/Social.h>
 #import "User.h"
 #import "Event.h"
+#import "Constants.h"
 
 
 @interface TwitterController()
@@ -84,6 +85,7 @@
                              [user setUserName:([userinfo objectForKey: @"name"])];
                              [user setUserAddress:([userinfo objectForKey: @"location"])];
                              [user setImage:([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]])];
+                             [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?
