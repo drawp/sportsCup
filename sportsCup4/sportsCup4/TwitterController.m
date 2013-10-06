@@ -213,7 +213,7 @@
                                           @"status": status};
                  SLRequest *request =
                  [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                    requestMethod:SLRequestMethodGET
+                                    requestMethod:SLRequestMethodPOST
                                               URL:url
                                        parameters:params];
                  
