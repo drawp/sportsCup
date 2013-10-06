@@ -83,12 +83,33 @@ function initialize() {
     type: 'POST',
     success: function(requestData) {
 
-      var data = google.visualization.arrayToDataTable([
-        [ 'Game', 'Interest' ],
-        [ 'Michigan vs Minnesota', 254 ],
-        [ 'Clemson vs Syracuse',  176],
-        [ 'Oregon vs Colorado', 120 ],
-      ]);
+      var games = []
+      // set first entry in games array to header titles
+      games.add(['Game', 'Twitter Interest'])
+      var found, gameInfo, gameName;
+      // Contruct hash of games and counts of number of tweets
+      for (x in requestData) {
+        gameInfo = requestData[x]
+        // check if game has alredy been added to hash
+        gameName = gameInfo.away_team + ' at ' +  gameInfo.home_team
+        found = false;
+        for (y in games) {
+          // if game has already been found increment
+          if ( games[y][0] = gameName ) {
+            games[y][1] = games[y][1] + 1;
+            found = true;
+          }
+        }
+        // if game was not found in current list, add entry for it
+        if (found == false) {
+          game = {};
+          game[0] = gameName;
+          game[1] = 1;
+          games.push(game);
+        }
+      }
+
+      var data = google.visualization.arrayToDataTable(games);
 
       var options = {
         title: 'College Football Interest',
