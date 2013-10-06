@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    NSString *fullURL = @"http://www.google.com";
+    NSString *fullURL = @"http://busrac.es/sportspot/main.html";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];

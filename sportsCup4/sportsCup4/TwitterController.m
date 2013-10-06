@@ -77,13 +77,13 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
-
+                             NSString *imageUrl = [userinfo objectForKey: @"profile_image_url"];
+                             imageUrl = [NSString stringWithFormat: @"%@.png", [imageUrl substringToIndex:[imageUrl length] - 11]];
+                             
                              [user setTwitterHandle:([account username])];
                              [user setUserName:([userinfo objectForKey: @"name"])];
                              [user setUserAddress:([userinfo objectForKey: @"location"])];
-                             [user setImage:([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userinfo objectForKey: @"profile_image_url"]]]])];
-                             NSLog(@"twitter check ran, name is %@",[userinfo objectForKey: @"name"]);
-                             NSLog(@"and the user's stored name is %@",[User sharedInstance].userName);
+                             [user setImage:([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]])];
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?
@@ -158,11 +158,8 @@
                                      
                                      //add the events to the user
                                      [user addEvent:event];
-                                     NSLog(@"event: %@", event);
                                  }
                              }
-                             
-                             NSLog(@"tweets: %@", tweets);
                              
                          }
                          else {
