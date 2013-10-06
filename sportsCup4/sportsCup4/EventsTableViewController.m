@@ -11,6 +11,7 @@
 #import "Cell.h"
 #import "User.h"
 #import "Event.h"
+#import "AddEventViewController.h"
 
 @interface EventsTableViewController ()
 
@@ -37,7 +38,6 @@
     
     [[User sharedInstance] reloadData];
     
-    //self.eventsArray = [[NSMutableArray alloc] initWithObjects:@"today",@"tomorrow", nil];
     self.eventsArray = [User sharedInstance].eventArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);
 
@@ -152,32 +152,16 @@
         
         detailViewController.event = [eventsArray objectAtIndex:[myIndexPath row]];
 
+    } else if ([[segue identifier] isEqualToString:@"showEAddEvent"]){
+        AddEventViewController* addEventController = [segue destinationViewController];
+        
     }
 }
 
-#pragma mark - alert view methods to add an event
 
 - (IBAction)addEvent:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Hello World!"
-                                                      message:@"This is your first UIAlertview message."
-                                                     delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"OK",nil];
-    [message show];
+    NSLog(@"the add event button was touched");
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Cancel"])
-    {
-        //replace with code to tweet the message
-        NSLog(@"Cancel was selected.");
-    }
-    else if([title isEqualToString:@"OK"])
-    {
-        NSLog(@"OK was selected.");
-    }
-}
 
 @end
