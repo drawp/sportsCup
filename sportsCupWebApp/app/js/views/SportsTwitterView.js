@@ -154,7 +154,8 @@ function initialize() {
       // get list of establishment objects
       var establishments = requestData.features;
       var markers = [];
-      var establishment, lng, lat, latLng, eventText, infoWindow;
+      var infoWindows = [];
+      var establishment, lng, lat, latLng, eventText;
 
       // for each establishment create map marker with event text
       for (x in establishments) {
@@ -166,9 +167,9 @@ function initialize() {
         eventText = '<div class="info-window"><div id="info-header">' + establishment.properties.name
           + '</div><div id="info-content">' + establishment.properties.events.join(" ") + '</div></div>';
 
-        var infoWindow = new google.maps.InfoWindow({
+        infoWindows.push ( new google.maps.InfoWindow({
           content: eventText
-        });
+        }));
 
         markers.push( new google.maps.Marker({
           position: latLng,
@@ -176,7 +177,7 @@ function initialize() {
         }));
 
         google.maps.event.addListener(markers[x], 'click', function() {
-          infoWindow.open(map,markers[x]);
+          infoWindows[x].open(map,markers[x]);
         });
       }
     },
