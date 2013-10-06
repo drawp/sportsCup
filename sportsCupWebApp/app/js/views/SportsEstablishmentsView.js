@@ -31,7 +31,7 @@ function initialize() {
         lng = establishment.geometry.coordinates[0];
         lat = establishment.geometry.coordinates[1];
         latLng = new google.maps.LatLng(lat, lng);
-        eventText = establishments.properties.name;
+        eventText = establishment.properties.name;
 
         marker = new google.maps.Marker({
           position: latLng,
