@@ -85,7 +85,7 @@ function initialize() {
 
       var games = []
       // set first entry in games array to header titles
-      games.add(['Game', 'Twitter Interest'])
+      games.push(['Game', 'Twitter Interest'])
       var found, gameInfo, gameName;
       // Contruct hash of games and counts of number of tweets
       for (x in requestData) {
