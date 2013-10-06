@@ -35,17 +35,16 @@
 
 - (void)viewDidLoad
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refresh)
+                                                 name:kUserDataRetrieved
+                                               object:nil];
     [super viewDidLoad];
-    
     [[User sharedInstance] reloadData];
     
     self.eventsArray = [User sharedInstance].eventArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refresh)
-                                                 name:kUserDataRetrieved
-                                               object:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

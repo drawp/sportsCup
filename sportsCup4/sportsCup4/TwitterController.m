@@ -85,6 +85,8 @@
                              [user setUserName:([userinfo objectForKey: @"name"])];
                              [user setUserAddress:([userinfo objectForKey: @"location"])];
                              [user setImage:([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]])];
+                             sleep(1);
+                             NSLog(@"2: updating view.");
                              [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                          }
                          else {
@@ -179,14 +181,15 @@
                                          [user addEvent:event];
                                          
                                          NSLog(@"Added event: %@", dateString);
-                                         [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                                      }
                                  }
                                  @catch (NSException * e) {
                                      NSLog(@"Exception: %@", e);
                                  }
                              }
-                             
+                             sleep(1);
+                             NSLog(@"1: updating view.");
+                             [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?

@@ -60,14 +60,20 @@
 }
 
 -(void) refresh {
-    self.name.text = [User sharedInstance].userName;
-    self.twitterHandle.text =[@"@" stringByAppendingString:[User sharedInstance].twitterHandle];
-    self.address.text =[User sharedInstance].userAddress;
+    NSLog(@"here");
+    User *user = [User sharedInstance];
+    self.name.text = user.userName;
+    self.twitterHandle.text =[@"@" stringByAppendingString:user.twitterHandle];
+    self.address.text = user.userAddress;
     
-    if ([User sharedInstance].image) {
+    if (user.image) {
         [self.img setContentMode:UIViewContentModeScaleAspectFill];
-        [self.img setImage:[User sharedInstance].image];
+        [self.img setImage:user.image];
     }
+    [self.view setNeedsDisplay];
+    [self.view setNeedsLayout];
+    [self viewDidLoad];
+    NSLog(@"here2");
 }
 
 - (void)didReceiveMemoryWarning
