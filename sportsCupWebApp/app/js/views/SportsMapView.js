@@ -1,5 +1,8 @@
 google.load( 'visualization', '1', { packages:['corechart'] });
 
+/*
+ * Gets year and week of football year
+ */
 function getWeekNumber(d) {
   // Copy date so don't modify original
   d = new Date(d);
@@ -9,8 +12,8 @@ function getWeekNumber(d) {
   d.setDate(d.getDate() + 4 - (d.getDay()||7));
   // Get first day of year
   var yearStart = new Date(d.getFullYear(),0,1);
-  // Calculate full weeks to nearest Thursday
-  var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7)
+  // TODO: Figure out week of football season, hardcode 7 for now
+  var weekNo = 7;
   // Return array of year and week number
   return [d.getFullYear(), weekNo];
 }
