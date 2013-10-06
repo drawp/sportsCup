@@ -127,7 +127,6 @@ function initialize() {
       var options = {
         title: 'test',
         fontSize: 11,
-        legend: 'none',
         pieSliceText: 'label',
         backgroundColor: 'transparent'
       };
