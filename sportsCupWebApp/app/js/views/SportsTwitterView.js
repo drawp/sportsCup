@@ -125,6 +125,16 @@ function initialize() {
           }
         }
       });
+
+      function selectHandler() {
+        var selectedItem = marker.getSelection()[0];
+        if (selectedItem) {
+          var topping = data.getValue(selectedItem.row, 0);
+          alert('The user selected ' + topping);
+        }
+      }
+
+      google.visualization.events.addListener(marker, 'select', selectHandler);
       marker.draw(data, options);
 
     },
@@ -143,7 +153,9 @@ function initialize() {
 
       // get list of establishment objects
       var establishments = requestData.features;
-      var establishment, lng, lat, latLng, eventText, infoWindow, marker;
+      var markers = [];
+      var infoWindows = [];
+      var establishment, lng, lat, latLng, eventText;
 
       // for each establishment create map marker with event text
       for (x in establishments) {
@@ -155,17 +167,17 @@ function initialize() {
         eventText = '<div class="info-window"><div id="info-header">' + establishment.properties.name
           + '</div><div id="info-content">' + establishment.properties.events.join(" ") + '</div></div>';
 
-        var infoWindow = new google.maps.InfoWindow({
+        infoWindows.push ( new google.maps.InfoWindow({
           content: eventText
-        });
+        }));
 
-        marker = new google.maps.Marker({
+        markers.push( new google.maps.Marker({
           position: latLng,
           map: map
-        });
+        }));
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infoWindow.open(map,marker);
+        google.maps.event.addListener(markers[x], 'click', function() {
+          infoWindows[x].open(map,markers[x]);
         });
       }
     },

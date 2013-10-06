@@ -41,7 +41,7 @@ body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
 
 /* map marker pop-up content */
 .info-window {
- width: 250px;
+ width: 200px;
 }
 
 #info-header {
