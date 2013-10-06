@@ -91,7 +91,7 @@ function initialize() {
       for (x in requestData) {
         gameInfo = requestData[x]
         // check if game has alredy been added to hash
-        gameName = gameInfo.away_team + ' at ' +  gameInfo.home_team
+        gameName = gameInfo.game_info.away_team + ' at ' +  gameInfo.game_info.home_team
         found = false;
         for (y in games) {
           // if game has already been found increment
