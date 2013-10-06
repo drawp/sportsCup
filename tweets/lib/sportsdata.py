@@ -2,8 +2,41 @@ import urllib2 as urllib
 from xml.dom.minidom import parseString
 from clay import config
 
+ncaa_base_url = config.get('sportsdata.ncaa_url')
+nfl_base_url = config.get('sportsdata.nfl_url')
 
-team_lookup = {'AF': 'Falcons',
+nfl_lookup = {'ARI': 'Cardinals',
+              'SEA': 'Seahawks',
+              'NYJ': 'Jets',
+              'NE': 'Patriots',
+              'ATL': 'Falcons',
+              'TB': 'Buccaneers',
+              'DET': 'Lions',
+              'CIN': 'Bengals',
+              'JAC': 'Jaguars',
+              'SD': 'Chargers',
+              'WAS': 'Redskins',
+              'CHI': 'Bears',
+              'CAR': 'Panthers',
+              'STL': 'Rams',
+              'MIA': 'Dolphins',
+              'BUF': 'Bills',
+              'PHI': 'Eagles',
+              'DAL': 'Cowboys',
+              'TEN': 'Titans',
+              'SF': '49ers',
+              'PIT': 'Steelers',
+              'BAL': 'Ravens',
+              'KC': 'Chiefs',
+              'HOU': 'Texans',
+              'GB': 'Packers',
+              'CLE': 'Browns',
+              'IND': 'Colts',
+              'DEN': 'Broncos',
+              'NYG': 'Giants',
+              'MIN': 'Vikings'}
+
+ncaa_lookup = {'AF': 'Falcons',
               'ARI': 'Wildcats',
               'ARK': 'Razorbacks',
               'ARM': 'Knights',
@@ -76,7 +109,14 @@ def hashtag(game, broadcast_info):
   else:
     return None
 
-def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
+def sportsdatareq(week, year, sportsdata_key, ncaaf_or_nfl):
+  
+  if ncaaf_or_nfl == 'ncaaf':
+    sportsdata_base_url = ncaa_base_url
+    lookup = ncaa_lookup
+  elif ncaaf_or_nfl == 'nfl':
+    sportsdata_base_url = nfl_base_url
+    lookup = nfl_lookup
   
   schedule_url = '{}{}/reg/{}/schedule.xml?api_key={}'.format(sportsdata_base_url, year, week, sportsdata_key)
   xml = parseString(urllib.urlopen(schedule_url).read()).getElementsByTagName('game')
@@ -89,11 +129,11 @@ def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
     htag = hashtag(game, broadcast_info)
     if htag:
       try:
-        hometeam = team_lookup[game.attributes['home'].value]
+        hometeam = lookup[game.attributes['home'].value]
       except KeyError:
         hometeam = 'Matties'
       try:
-        awayteam = team_lookup[game.attributes['away'].value]
+        awayteam = lookup[game.attributes['away'].value]
       except KeyError:
         awayteam = 'Matties'
       htag_lookup[htag] = {'game_id': game.attributes['id'].value, 'broadcast': broadcast_info, 'scheduled': game.attributes['scheduled'].value,
