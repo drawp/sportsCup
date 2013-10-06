@@ -10,4 +10,5 @@
 
 @interface EventListController : NSObject
 - (NSMutableArray *)getEvents;
+- (NSMutableArray *)getAllEvents;
 @end

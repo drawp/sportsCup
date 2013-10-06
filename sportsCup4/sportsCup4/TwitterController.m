@@ -7,6 +7,7 @@
 //
 
 #import "TwitterController.h"
+#import "EventListController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "User.h"
@@ -143,9 +144,15 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
+                             
+                             
+                             EventListController *gameController = [[EventListController alloc] init];
+                             NSArray *games = [gameController getAllEvents];
+                             
                              for (NSDictionary *tweet in tweets) {
                                  @try {
                                      NSString *tweetText = [tweet objectForKey:(@"text")];
+                                     NSMutableArray *users = [[NSMutableArray alloc] init];
                                      if ([tweetText rangeOfString:@"#sportspot"].location != NSNotFound && [tweetText hasPrefix:@"Showing"]) {
                                          // Create event and attach to user.
                                          NSRange newlineRange = [tweetText rangeOfString:@"AM,"];
@@ -177,6 +184,24 @@
                                              continue;
                                          }
                                          
+
+                                        NSRange range = [tweetText rangeOfString:@"#sportspot"];
+                                        NSString *hashTag = [tweetText substringFromIndex:range.location + 11];
+                                         NSLog(@"HASHTAG: %@", hashTag);
+                                         
+                                         for (NSDictionary *game in games) {
+                                             NSLog(@"USER: %@",[game objectForKey:@"user"]);
+                                             NSDictionary *gameInfo = [game objectForKey:(@"game_info")];
+                                             if([[gameInfo objectForKey:@"hashtag"] isEqualToString:hashTag]) {
+                                                 NSLog(@"%@",[game objectForKey:@"user"]);
+                                                 NSString *tmp = [game objectForKey:@"user"];
+                                                 if(![tmp isEqual: [NSNull null]]) {
+                                                     [users addObject:tmp];
+                                                 }
+                                             }
+                                         }
+                                         [event setUserList:users];
+                                         
                                          //add the events to the user
                                          [user addEvent:event];
                                          
@@ -187,6 +212,8 @@
                                      NSLog(@"Exception: %@", e);
                                  }
                              }
+                             
+                             
                              sleep(1);
                              NSLog(@"1: updating view.");
                              [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];

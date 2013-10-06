@@ -72,5 +72,24 @@
     return events;
 }
 
+- (NSMutableArray *)getAllEvents
+{
+        NSLog(@"begin");
+    NSString *post = [NSString stringWithFormat:@"{\"year\":2013, \"week\":5}"];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://busrac.es/sportspot/tweets/nfl"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSError *jsonParsingError = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSLog(@"test1");
+    NSMutableArray *games = [NSJSONSerialization JSONObjectWithData:response options:0 error:&jsonParsingError];
+    NSLog(@"test2");
+    return games;
+}
 
 @end
