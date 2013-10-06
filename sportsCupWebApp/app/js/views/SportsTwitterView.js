@@ -79,7 +79,7 @@ function initialize() {
   var yearWeekArray = getWeekNumber(today);
 
   $.ajax({
-    url: 'tweets/ncaaf',
+    url: 'tweets/nfl',
     type: 'POST',
     success: function(requestData) {
 
