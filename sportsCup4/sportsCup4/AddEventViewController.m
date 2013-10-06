@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Event.h"
 #import "TwitterController.h"
+#import "EventListController.h"
 
 @interface AddEventViewController ()
 
@@ -37,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    self.eventList = [User sharedInstance].eventArray;
+    self.eventList = [[[EventListController alloc] init] getEvents];
     self.title = @"Add Event";
     
     [self.datePicker addTarget:self
@@ -113,6 +114,7 @@
     }
     else if([title isEqualToString:@"OK"])
     {
+        [[[TwitterController alloc] init] tweet:[User sharedInstance] withArg2:self.tweetString];
         NSLog(@"OK was selected.");
     }
 }

@@ -25,7 +25,7 @@
     return self;
 }
 
-- (NSArray *)getEvents
+- (NSMutableArray *)getEvents
 {
  
     NSMutableArray *events = [[NSMutableArray alloc] init];
@@ -59,7 +59,7 @@
         [events addObject:(event)];
     }
 
-    NSLog(@"%@", events);
+    NSLog(@" these are the events: %@", events);
     return events;
 }
 
