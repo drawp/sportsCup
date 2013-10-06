@@ -106,11 +106,11 @@ function initialize() {
 
     },
     error: function(xhr, textStatus, errorThrown) {
-      alert("Error Loading data " + errorThrown;
+      alert("Error Loading data " + errorThrown);
     },
     contentType: 'application/json',
     dataType: 'json',
-    data: '{"year":yearWeekArray[0], "week":yearWeekArray[1]}'
+    data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
   });
 
 
