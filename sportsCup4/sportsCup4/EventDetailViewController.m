@@ -51,4 +51,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - event picker data source methods
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    return [event.userList count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString* userForRow = [event.userList objectAtIndex:row];
+    return userForRow;//Or, your suitable title; like Choice-a, etc.
+}
+
+
+#pragma mark - event picker delegate methods
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    NSLog(@"the selected user is %@", [event.userList objectAtIndex:row]);
+    
+}
+
+
 @end

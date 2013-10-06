@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Event;
 
-@interface EventDetailViewController : UIViewController
+@interface EventDetailViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, retain) Event* event;
 @property (nonatomic, retain) IBOutlet UILabel* name;

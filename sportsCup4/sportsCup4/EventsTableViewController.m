@@ -36,7 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [[User sharedInstance] reloadData];
     
     self.eventsArray = [User sharedInstance].eventArray;
