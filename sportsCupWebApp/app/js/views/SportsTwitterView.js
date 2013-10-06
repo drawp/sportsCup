@@ -136,6 +136,37 @@ function initialize() {
     data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
   });
 
+  $.ajax({
+    url: 'establishments',
+    type: 'POST',
+    success: function(requestData) {
+
+      // get list of establishment objects
+      var establishments = requestData.features;
+      var establishment, lng, lat, latLng, eventText, marker;
+
+      // for each establishment create map marker with event text
+      for (x in establishments) {
+        establishment = establishments[x];
+        lng = establishment.geometry.coordinates[0];
+        lat = establishment.geometry.coordinates[1];
+        latLng = new google.maps.LatLng(lat, lng);
+        eventText = establishment.properties.name;
+
+        marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          title: eventText
+        });
+      }
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      alert("Error Loading data " + errorThrown);
+    },
+    contentType: "application/json; charset=utf-8",
+    dataType: 'json'
+  });
+
 
 };
 
