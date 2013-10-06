@@ -61,7 +61,7 @@ function initialize() {
   var latLng = new google.maps.LatLng( 37.7833, -122.4167 );
 
   var map = new google.maps.Map( $('#map-canvas')[0], {
-    zoom: 12,
+    zoom: 11,
     center: latLng,
     panControl: false,
     zoomControl: false,
@@ -79,7 +79,7 @@ function initialize() {
   var yearWeekArray = getWeekNumber(today);
 
   $.ajax({
-    url: 'tweets/ncaaf',
+    url: 'tweets/nfl',
     type: 'POST',
     success: function(requestData) {
 
@@ -112,7 +112,7 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
-        fontSize: 20,
+        fontSize: 11,
         legend: 'none',
         pieSliceText: 'label',
         backgroundColor: 'transparent'
