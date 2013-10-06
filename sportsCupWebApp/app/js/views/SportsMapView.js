@@ -1,5 +1,23 @@
 google.load( 'visualization', '1', { packages:['corechart'] });
 
+/*
+ * Gets year and week of football year
+ */
+function getWeekNumber(d) {
+  // Copy date so don't modify original
+  d = new Date(d);
+  d.setHours(0,0,0);
+  // Set to nearest Thursday: current date + 4 - current day number
+  // Make Sunday's day number 7
+  d.setDate(d.getDate() + 4 - (d.getDay()||7));
+  // Get first day of year
+  var yearStart = new Date(d.getFullYear(),0,1);
+  // TODO: Figure out week of football season, hardcode 7 for now
+  var weekNo = 7;
+  // Return array of year and week number
+  return [d.getFullYear(), weekNo];
+}
+
 function ChartMarker( options ) {
 
   this.$inner = $('<div>').css({
@@ -54,29 +72,51 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
-  var data = google.visualization.arrayToDataTable([
-    [ 'Game', 'Interest' ],
-    [ 'Michigan vs Minnesota', 254 ],
-    [ 'Clemson vs Syracuse',  176],
-    [ 'Oregon vs Colorado', 120 ],
-  ]);
+  // get todays date
+  var today = new Date();
 
-  var options = {
-    title: 'College Football Interest',
-    fontSize: 20,
-    legend: 'none',
-    pieSliceText: 'label',
-    backgroundColor: 'transparent'
-  };
+  // get array with year and week number
+  var yearWeekArray = getWeekNumber(today);
 
-  var marker = new ChartMarker({
-    events: {
-      click: function( event ) {
-        alert( 'Clicked marker' );
-      }
-    }
+  $.ajax({
+    url: 'tweets',
+    type: 'GET',
+    success: function(requestData) {
+
+      var data = google.visualization.arrayToDataTable([
+        [ 'Game', 'Interest' ],
+        [ 'Michigan vs Minnesota', 254 ],
+        [ 'Clemson vs Syracuse',  176],
+        [ 'Oregon vs Colorado', 120 ],
+      ]);
+
+      var options = {
+        title: 'College Football Interest',
+        fontSize: 20,
+        legend: 'none',
+        pieSliceText: 'label',
+        backgroundColor: 'transparent'
+      };
+
+      var marker = new ChartMarker({
+        events: {
+          click: function( event ) {
+            alert( 'Clicked marker' );
+          }
+        }
+      });
+      marker.draw(data, options);
+
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      alert("Error Loading data " + errorThrown);
+    },
+    contentType: 'application/json',
+    dataType: 'json',
+    data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
   });
-  marker.draw(data, options);
+
+
 };
 
 $( initialize );
