@@ -151,7 +151,7 @@
                                              newlineRange = [tweetText rangeOfString:@"PM,"];
                                          }
                                          NSString *dateString = [tweetText substringFromIndex:newlineRange.location - 2];
-                                         dateString = [dateString substringToIndex:19];
+                                         dateString = [dateString substringToIndex:25];
                                          
                                          NSCalendar *calendar = [NSCalendar currentCalendar];
                                          NSDateComponents* comp1 = [[NSDateComponents alloc] init];
@@ -164,6 +164,16 @@
                                          //choose two random events
                                          Event* event = [[Event alloc]initWithName:dateString date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
                                          [event setRSVPs:([tweet objectForKey:(@"favorite_count")])];
+
+                                         BOOL cont = NO;
+                                         for (Event *eTmp in [user eventArray]) {
+                                             if ([[eTmp originalTweet] isEqualToString:tweetText]) {
+                                                 cont = YES;
+                                             }
+                                         }
+                                         if(cont == YES) {
+                                             continue;
+                                         }
                                          
                                          //add the events to the user
                                          [user addEvent:event];
