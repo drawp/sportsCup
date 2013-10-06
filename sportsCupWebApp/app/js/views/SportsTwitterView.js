@@ -55,11 +55,7 @@ ChartMarker.prototype.draw = function(data, options) {
   var instance = this;
 
   function selectHandler() {
-    var selectedItem = instance.chart.getSelection()[0];
-    if (selectedItem) {
-      var topping = data.getValue(selectedItem.row, 0);
-      alert('The user selected ' + topping);
-    }
+    alert("test");
   }
   google.visualization.events.addListener(this.chart, 'select', selectHandler());
 
@@ -125,8 +121,8 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
-        title: 'test',
         fontSize: 11,
+        legend: 'none',
         pieSliceText: 'label',
         backgroundColor: 'transparent'
       };
