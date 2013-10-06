@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSDate* selectedDate;
 @property (nonatomic, retain) IBOutlet UIDatePicker* datePicker;
 @property (nonatomic, retain) IBOutlet UIPickerView* gamePicker;
+@property (nonatomic, retain) NSString* tweetString;
 
 - (IBAction)tweet:(id)sender;
 
