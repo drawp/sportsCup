@@ -12,10 +12,10 @@
 @interface EventDetailViewController : UIViewController
 
 @property (nonatomic, retain) Event* event;
-@property (nonatomic, retain) IBOutlet NSString* name;
-@property (nonatomic, retain) IBOutlet NSDate* date;
-@property (nonatomic, retain) IBOutlet NSNumber* hour;
-@property (nonatomic, retain) IBOutlet NSString* origTweet;
-@property (nonatomic, retain) IBOutlet NSNumber* RSVPs;
+@property (nonatomic, retain) IBOutlet UILabel* name;
+@property (nonatomic, retain) IBOutlet UILabel* date;
+@property (nonatomic, retain) IBOutlet UILabel* hour;
+@property (nonatomic, retain) IBOutlet UILabel* origTweet;
+@property (nonatomic, retain) IBOutlet UILabel* RSVPs;
 
 @end

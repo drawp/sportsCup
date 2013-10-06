@@ -35,11 +35,11 @@
 {
     [super viewDidLoad];
 	
-    self.name = self.event.name;
-    self.date = self.event.date;
-    self.hour = self.event.hour;
-    self.origTweet = self.event.originalTweet;
-    self.RSVPs = self.event.RSVPs;
+    self.name.text = self.event.name;
+    //self.date.text = self.event.date;
+    //self.hour.text = self.event.hour;
+    self.origTweet.text = self.event.originalTweet;
+    //self.RSVPs.text = self.event.RSVPs;
 
 }
 

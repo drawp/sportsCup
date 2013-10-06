@@ -45,6 +45,7 @@ static User* _user = nil;
     if(self = [super init])
     {
         _user.eventArray = [[NSMutableArray alloc] init];
+        [self reloadData];
     }
     return self;
 }
