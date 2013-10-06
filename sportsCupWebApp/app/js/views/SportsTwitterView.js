@@ -175,8 +175,8 @@ function initialize() {
           map: map
         }));
 
-        google.maps.event.addListener(markers[0], 'click', function() {
-          infoWindow.open(map,markers[0]);
+        google.maps.event.addListener(markers[x], 'click', function() {
+          infoWindow.open(map,markers[x]);
         });
       }
     },
