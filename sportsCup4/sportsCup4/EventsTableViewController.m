@@ -42,6 +42,8 @@
     self.eventsArray = [User sharedInstance].eventArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"grid_light_grey.jpg"]];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refresh)
                                                  name:kUserDataRetrieved

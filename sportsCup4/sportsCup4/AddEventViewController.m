@@ -49,6 +49,8 @@
     if (self.selectedEvent.date) {
         datePicker.date = self.selectedEvent.date;
     }
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"grid_light_grey.jpg"]];
 	// Do any additional setup after loading the view.
 }
 
