@@ -115,6 +115,7 @@
     else if([title isEqualToString:@"OK"])
     {
         [[[TwitterController alloc] init] tweet:[User sharedInstance] withArg2:self.tweetString];
+        [[[TwitterController alloc] init] setTwitterEvents:[User sharedInstance]];
         NSLog(@"OK was selected.");
     }
 }

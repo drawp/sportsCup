@@ -28,11 +28,11 @@
 - (NSMutableArray *)getEvents
 {
     NSMutableArray *events = [[NSMutableArray alloc] init];
-    NSString *post = [NSString stringWithFormat:@"{\"year\":2013, \"week\":7}"];
+    NSString *post = [NSString stringWithFormat:@"{\"year\":2013, \"week\":5}"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://busrac.es/sportspot/tweets/ncaaf"]];
+    [request setURL:[NSURL URLWithString:@"http://busrac.es/sportspot/tweets/nfl"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
@@ -46,6 +46,16 @@
         NSDictionary *gameInfo = [game objectForKey:(@"game_info")];
         NSString *name = [NSString stringWithFormat:@"%@ vs %@", [gameInfo objectForKey:(@"home_team")], [gameInfo objectForKey:(@"away_team")]];
 
+        BOOL cont = NO;
+        for (Event *eTmp in events) {
+            if ([[eTmp name] isEqualToString:name]) {
+                cont = YES;
+            }
+        }
+        if(cont == YES) {
+            continue;
+        }
+        
         NSString *hashTag = [gameInfo objectForKey:(@"hashtag")];
 
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
