@@ -31,6 +31,7 @@
 		995A9C781800BB010040166C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C771800BB010040166C /* Event.m */; };
 		995A9C7B1800BF0F0040166C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C7A1800BF0F0040166C /* User.m */; };
 		999C70531800F03A00AE0E28 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999C70521800F03A00AE0E28 /* WebViewController.m */; };
+		999C705718010D9100AE0E28 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999C705618010D9100AE0E28 /* AddEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		999C70511800F03A00AE0E28 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		999C70521800F03A00AE0E28 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		999C70541800F56800AE0E28 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		999C705518010D9100AE0E28 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		999C705618010D9100AE0E28 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				7E625E3E1800CD620026228D /* TwitterController.m */,
 				999C70511800F03A00AE0E28 /* WebViewController.h */,
 				999C70521800F03A00AE0E28 /* WebViewController.m */,
+				999C705518010D9100AE0E28 /* AddEventViewController.h */,
+				999C705618010D9100AE0E28 /* AddEventViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				995A9C3E1800029B0040166C /* AppDelegate.m in Sources */,
 				995A9C781800BB010040166C /* Event.m in Sources */,
 				995A9C471800029B0040166C /* FirstViewController.m in Sources */,
+				999C705718010D9100AE0E28 /* AddEventViewController.m in Sources */,
 				999C70531800F03A00AE0E28 /* WebViewController.m in Sources */,
 				995A9C6A180009D10040166C /* EventsTableViewController.m in Sources */,
 				995A9C3A1800029B0040166C /* main.m in Sources */,
