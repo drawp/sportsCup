@@ -42,7 +42,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="my profile" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="my profile" image="myPofile.jpg" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="address" destination="iwy-Fx-93r" id="odK-cB-HDh"/>
                         <outlet property="img" destination="VYn-CW-Agf" id="dxx-5I-ltR"/>
@@ -277,7 +277,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="my city" image="first" id="Cke-6D-bcF"/>
+                    <tabBarItem key="tabBarItem" title="my city" image="myCity.png" id="Cke-6D-bcF"/>
                     <connections>
                         <outlet property="webView" destination="5tD-yc-mB4" id="ikp-Q1-Pfy"/>
                     </connections>
@@ -290,7 +290,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="BUf-Ou-xSx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h0G-PW-DSL" customClass="SecondViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="my events" image="second" id="mhs-9H-hkO"/>
+                    <tabBarItem key="tabBarItem" title="my events" image="myEvents.png" id="mhs-9H-hkO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oBw-He-lpG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -307,9 +307,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="myCity.png" width="30" height="30"/>
+        <image name="myEvents.png" width="30" height="30"/>
+        <image name="myPofile.jpg" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

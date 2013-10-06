@@ -12,6 +12,7 @@
 #import "User.h"
 #import "Event.h"
 #import "AddEventViewController.h"
+#import "Constants.h"
 
 @interface EventsTableViewController ()
 
@@ -40,6 +41,11 @@
     
     self.eventsArray = [User sharedInstance].eventArray;
     NSLog(@"there are %i items in the array", [eventsArray count]);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refresh)
+                                                 name:kUserDataRetrieved
+                                               object:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -161,6 +167,10 @@
 
 - (IBAction)addEvent:(id)sender {
     NSLog(@"the add event button was touched");
+}
+
+-(void)refresh{
+    [self.tableView reloadData];
 }
 
 
