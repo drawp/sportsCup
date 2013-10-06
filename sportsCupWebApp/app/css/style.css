@@ -33,8 +33,23 @@ body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
   position: absolute;
   top: 25px;
   left: 0px;
-  opacity:0.7;
+  opacity:1.0;
   width: 125px;
   height: 125px;
   z-index: 2;
+}
+
+/* map marker pop-up content */
+.info-window {
+ width: 250px;
+}
+
+#info-header {
+  background-color: #020202;
+  color: #CCC;
+  font-size: 10px;
+}
+
+#info-content {
+  font-size: 10px;
 }
