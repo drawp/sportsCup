@@ -7,12 +7,20 @@
 //
 
 #import "EventDetailViewController.h"
+#import "Event.h"
 
 @interface EventDetailViewController ()
 
 @end
 
 @implementation EventDetailViewController
+
+@synthesize event;
+@synthesize name;
+@synthesize date;
+@synthesize hour;
+@synthesize origTweet;
+@synthesize RSVPs;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +34,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.name = self.event.name;
+    self.date = self.event.date;
+    self.hour = self.event.hour;
+    self.origTweet = self.event.originalTweet;
+    self.RSVPs = self.event.RSVPs;
+
 }
 
 - (void)didReceiveMemoryWarning
