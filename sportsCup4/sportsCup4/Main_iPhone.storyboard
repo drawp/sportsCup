@@ -217,7 +217,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
