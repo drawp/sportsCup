@@ -96,6 +96,6 @@ def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
         awayteam = team_lookup[game.attributes['away'].value]
       except KeyError:
         awayteam = 'Matties'
-      htag_lookup[htag] = {'game_id': game.attributes['id'].value, 'broadcast': broadcast_info,
+      htag_lookup[htag] = {'game_id': game.attributes['id'].value, 'broadcast': broadcast_info, 'scheduled': game.attributes['scheduled'].value,
                             'home_team': hometeam, 'away_team': awayteam, 'hashtag': htag}
   return htag_lookup
