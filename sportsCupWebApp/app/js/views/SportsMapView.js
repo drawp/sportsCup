@@ -102,7 +102,7 @@ function initialize() {
         }
         // if game was not found in current list, add entry for it
         if (found == false) {
-          game = {};
+          game = [];
           game[0] = gameName;
           game[1] = 1;
           games.push(game);
