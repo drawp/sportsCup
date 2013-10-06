@@ -19,6 +19,7 @@
 
 @property (nonatomic,retain) NSMutableArray *eventsArray;
 @property (nonatomic,retain) EventDetailViewController* eventDetailController;
-- (IBAction)addEvent:(id)sender;
+
+- (IBAction) addEvent:(id)sender;
 
 @end

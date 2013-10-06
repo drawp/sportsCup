@@ -4,11 +4,11 @@ from flask import request, abort
 from lib import twitter, sportsdata
 import json
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def health():
   return 'OK'
   
-@app.route('/tweets', methods=['GET'])
+@app.route('/tweets', methods=['POST'])
 def tweets():
   """Find all tweets relevant to NCAA football games in a given week."""
   
