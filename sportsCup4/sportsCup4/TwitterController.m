@@ -82,6 +82,8 @@
                              [user setUserName:([userinfo objectForKey: @"name"])];
                              [user setUserAddress:([userinfo objectForKey: @"location"])];
                              [user setImage:([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userinfo objectForKey: @"profile_image_url"]]]])];
+                             NSLog(@"twitter check ran, name is %@",[userinfo objectForKey: @"name"]);
+                             NSLog(@"and the user's stored name is %@",[User sharedInstance].userName);
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?

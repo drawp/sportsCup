@@ -66,34 +66,12 @@ static User* _user = nil;
 
 
 -(void) reloadData {
-    // THE FOLLOWING SETUP CALLS ARE DUMMIES THAT MUST BE REPLACED
-    
-    //setup the user - REPLACE
-//    [self setName:@"Black magic" twitterHandle:@"@BlackMagic" address:@"1400 Lombard" andImage:[[UIImage alloc]init]];
     
     TwitterController *twitterController = [[TwitterController alloc] init];
     [twitterController setTwitterUserInfo:(self)];
     [twitterController setTwitterEvents:(self)];
     
-    //if there are events
-    
-    //choose a random date for all events - CREATE DATE INFO
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents* comp1 = [[NSDateComponents alloc] init];
-    [comp1 setDay:5];
-    [comp1 setMonth:4];
-    [comp1 setYear:2013];
-    NSDate* date1 = [calendar dateFromComponents:comp1];
-    
-    //choose two random events
-    Event* event1 = [[Event alloc]initWithName:@"event1" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us!"] ;
-    
-    Event* event2 = [[Event alloc] initWithName:@"event2" date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@"come join us also!"];
 
-    //add the events to the user
-    [self addEvent:event1];
-    [self addEvent:event2];
-    
     NSLog(@"the event has been called");
     
 }
