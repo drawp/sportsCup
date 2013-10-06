@@ -53,7 +53,7 @@
                                                  name:kUserDataRetrieved
                                                object:nil];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"stars.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"grid_bright.jpg"]];
     
     
 

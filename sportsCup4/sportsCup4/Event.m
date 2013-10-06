@@ -16,6 +16,7 @@
 @synthesize originalTweet;
 @synthesize RSVPs;
 @synthesize hashtag;
+@synthesize userList;
 
 -(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet {
     
