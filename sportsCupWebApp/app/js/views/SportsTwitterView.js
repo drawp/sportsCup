@@ -55,7 +55,7 @@ ChartMarker.prototype.draw = function(data, options) {
   var instance = this;
 
   function selectHandler() {
-    var selectedItem = instance.chart.getSelection().call(instance)[0];
+    var selectedItem = instance.chart.getSelection()[0];
     if (selectedItem) {
       var topping = data.getValue(selectedItem.row, 0);
       alert('The user selected ' + topping);
