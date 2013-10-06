@@ -33,10 +33,12 @@
 		995A9C7B1800BF0F0040166C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A9C7A1800BF0F0040166C /* User.m */; };
 		997EFD161801DC810048B39A /* myEvents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD151801DC810048B39A /* myEvents@2x.png */; };
 		997EFD181801DCB80048B39A /* myEvents.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD171801DCB80048B39A /* myEvents.png */; };
-		997EFD1B1801DD5C0048B39A /* myCity.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD191801DD5C0048B39A /* myCity.png */; };
-		997EFD1C1801DD5C0048B39A /* myCity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD1A1801DD5C0048B39A /* myCity@2x.png */; };
-		997EFD1F1801DE030048B39A /* myProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD1D1801DE030048B39A /* myProfile.jpg */; };
-		997EFD201801DE030048B39A /* myPofile@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD1E1801DE030048B39A /* myPofile@2x.jpg */; };
+		997EFD231801E5780048B39A /* maps.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD211801E5780048B39A /* maps.png */; };
+		997EFD241801E5780048B39A /* maps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD221801E5780048B39A /* maps@2x.png */; };
+		997EFD271801E73D0048B39A /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD251801E73D0048B39A /* profile@2x.png */; };
+		997EFD281801E73D0048B39A /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD261801E73D0048B39A /* profile.png */; };
+		997EFD2B1801EA410048B39A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD291801EA410048B39A /* icon@2x.png */; };
+		997EFD2C1801EA410048B39A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 997EFD2A1801EA410048B39A /* icon.png */; };
 		999C70531800F03A00AE0E28 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999C70521800F03A00AE0E28 /* WebViewController.m */; };
 		999C705718010D9100AE0E28 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999C705618010D9100AE0E28 /* AddEventViewController.m */; };
 /* End PBXBuildFile section */
@@ -92,10 +94,12 @@
 		995A9C7A1800BF0F0040166C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		997EFD151801DC810048B39A /* myEvents@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myEvents@2x.png"; sourceTree = "<group>"; };
 		997EFD171801DCB80048B39A /* myEvents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myEvents.png; sourceTree = "<group>"; };
-		997EFD191801DD5C0048B39A /* myCity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myCity.png; sourceTree = "<group>"; };
-		997EFD1A1801DD5C0048B39A /* myCity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myCity@2x.png"; sourceTree = "<group>"; };
-		997EFD1D1801DE030048B39A /* myProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myProfile.jpg; sourceTree = "<group>"; };
-		997EFD1E1801DE030048B39A /* myPofile@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "myPofile@2x.jpg"; sourceTree = "<group>"; };
+		997EFD211801E5780048B39A /* maps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maps.png; sourceTree = "<group>"; };
+		997EFD221801E5780048B39A /* maps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps@2x.png"; sourceTree = "<group>"; };
+		997EFD251801E73D0048B39A /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		997EFD261801E73D0048B39A /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		997EFD291801EA410048B39A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		997EFD2A1801EA410048B39A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		999C70511800F03A00AE0E28 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		999C70521800F03A00AE0E28 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		999C70541800F56800AE0E28 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -174,10 +178,12 @@
 			isa = PBXGroup;
 			children = (
 				995A9C4B1800029B0040166C /* Images.xcassets */,
-				997EFD1D1801DE030048B39A /* myProfile.jpg */,
-				997EFD1E1801DE030048B39A /* myPofile@2x.jpg */,
-				997EFD191801DD5C0048B39A /* myCity.png */,
-				997EFD1A1801DD5C0048B39A /* myCity@2x.png */,
+				997EFD291801EA410048B39A /* icon@2x.png */,
+				997EFD2A1801EA410048B39A /* icon.png */,
+				997EFD251801E73D0048B39A /* profile@2x.png */,
+				997EFD261801E73D0048B39A /* profile.png */,
+				997EFD211801E5780048B39A /* maps.png */,
+				997EFD221801E5780048B39A /* maps@2x.png */,
 				997EFD171801DCB80048B39A /* myEvents.png */,
 				997EFD151801DC810048B39A /* myEvents@2x.png */,
 				7E625E361800AB980026228D /* Main_iPad.storyboard */,
@@ -331,15 +337,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				997EFD181801DCB80048B39A /* myEvents.png in Resources */,
-				997EFD201801DE030048B39A /* myPofile@2x.jpg in Resources */,
-				997EFD1C1801DD5C0048B39A /* myCity@2x.png in Resources */,
-				997EFD1B1801DD5C0048B39A /* myCity.png in Resources */,
-				997EFD1F1801DE030048B39A /* myProfile.jpg in Resources */,
+				997EFD241801E5780048B39A /* maps@2x.png in Resources */,
+				997EFD271801E73D0048B39A /* profile@2x.png in Resources */,
 				7E625E391800AB980026228D /* Main_iPhone.storyboard in Resources */,
 				7E625E381800AB980026228D /* Main_iPad.storyboard in Resources */,
 				995A9C4C1800029B0040166C /* Images.xcassets in Resources */,
 				997EFD161801DC810048B39A /* myEvents@2x.png in Resources */,
+				997EFD231801E5780048B39A /* maps.png in Resources */,
+				997EFD2C1801EA410048B39A /* icon.png in Resources */,
 				995A9C381800029B0040166C /* InfoPlist.strings in Resources */,
+				997EFD281801E73D0048B39A /* profile.png in Resources */,
+				997EFD2B1801EA410048B39A /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
