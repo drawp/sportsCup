@@ -14,10 +14,6 @@ def hashtag(game, broadcast_info):
 def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
   # hardcoded response for week 7 of 2013 season for now
   
-  if not 'sportsdata_key' in locals() or not 'sportsdata_base_url' in locals():
-    sportsdata_key = 'u9x6nxranr5kv924nhhxudav'
-    sportsdata_base_url = 'http://api.sportsdatallc.org/ncaafb-t1/'
-    
   schedule_url = '{}{}/reg/{}/schedule.xml?api_key={}'.format(sportsdata_base_url, year, week, sportsdata_key)
   print schedule_url
   xml = parseString(urllib.urlopen(schedule_url).read()).getElementsByTagName('game')
