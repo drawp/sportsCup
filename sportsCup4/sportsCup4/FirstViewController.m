@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SCSimpleSLRequestDemo.h"
+#import "EventListController.h"
 #import "User.h"
 #import "Constants.h"
 
@@ -25,6 +26,10 @@
 
 - (void)viewDidLoad
 {
+    NSArray *events = [[NSArray alloc] init];
+    EventListController *test = [[EventListController alloc] init];
+    [test getEvents:(events)];
+    
 
 //    NSLog(@"testing");
 //    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
