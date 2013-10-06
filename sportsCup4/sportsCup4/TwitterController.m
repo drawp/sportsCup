@@ -141,25 +141,35 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
-                             
+                             NSLog(@"tweets: %@", tweets);
                              for (NSDictionary *tweet in tweets) {
-                                 NSString *tweetText = [tweet objectForKey:(@"text")];
-                                 if ([tweetText rangeOfString:@"#sportspot"].location != NSNotFound && [tweetText hasPrefix:@"Showing"]) {
-                                     // Create event and attach to user.
-
-                                     NSString *title = [tweetText substringWithRange:NSMakeRange(8, [tweetText length] - 8)];
-                                     NSCalendar *calendar = [NSCalendar currentCalendar];
-                                     NSDateComponents* comp1 = [[NSDateComponents alloc] init];
-                                     [comp1 setDay:5];
-                                     [comp1 setMonth:4];
-                                     [comp1 setYear:2013];
-                                     NSDate* date1 = [calendar dateFromComponents:comp1];
-                                     
-                                     //choose two random events
-                                     Event* event = [[Event alloc]initWithName:title date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
-                                     
-                                     //add the events to the user
-                                     [user addEvent:event];
+                                 @try {
+                                     NSString *tweetText = [tweet objectForKey:(@"text")];
+                                     if ([tweetText rangeOfString:@"#sportspot"].location != NSNotFound && [tweetText hasPrefix:@"Showing"]) {
+                                         // Create event and attach to user.
+                                         NSRange newlineRange = [tweetText rangeOfString:@"am,"];
+                                         if(newlineRange.location == NSNotFound) {
+                                             newlineRange = [tweetText rangeOfString:@"pm,"];
+                                         }
+                                         NSString *dateString = [tweetText substringFromIndex:newlineRange.location - 2];
+                                         dateString = [dateString substringToIndex:19];
+                                         
+                                         NSCalendar *calendar = [NSCalendar currentCalendar];
+                                         NSDateComponents* comp1 = [[NSDateComponents alloc] init];
+                                         [comp1 setDay:5];
+                                         [comp1 setMonth:4];
+                                         [comp1 setYear:2013];
+                                         NSDate* date1 = [calendar dateFromComponents:comp1];
+                                         
+                                         //choose two random events
+                                         Event* event = [[Event alloc]initWithName:dateString date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
+                                         [event setRSVPs:([tweet objectForKey:(@"retweet_count")])];
+                                         //add the events to the user
+                                         [user addEvent:event];
+                                     }
+                                 }
+                                 @catch (NSException * e) {
+                                     NSLog(@"Exception: %@", e);
                                  }
                              }
                              
