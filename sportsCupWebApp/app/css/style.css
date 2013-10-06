@@ -12,6 +12,7 @@ body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
   z-index: 3;
   color: #CCC;
   font-size: 20px;
+  opacity:1.0;
 }
 
 #header span {
@@ -30,10 +31,10 @@ body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
 /* hover stats pie chart */
 #pie-chart {
   position: absolute;
-  top: 0px;
+  top: 25px;
   left: 0px;
   opacity:0.7;
-  width: 300px;
-  height: 300px;
+  width: 125px;
+  height: 125px;
   z-index: 2;
 }

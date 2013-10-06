@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SCSimpleSLRequestDemo.h"
+#import "EventListController.h"
 #import "User.h"
 #import "Constants.h"
 
@@ -25,7 +26,8 @@
 
 - (void)viewDidLoad
 {
-
+    EventListController *test = [[EventListController alloc] init];
+    NSArray *events = [test getEvents];
 //    NSLog(@"testing");
 //    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
 //    [test setTwitterUserInfo];

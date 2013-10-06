@@ -61,7 +61,7 @@ function initialize() {
   var latLng = new google.maps.LatLng( 37.7833, -122.4167 );
 
   var map = new google.maps.Map( $('#map-canvas')[0], {
-    zoom: 12,
+    zoom: 11,
     center: latLng,
     panControl: false,
     zoomControl: false,
@@ -79,7 +79,7 @@ function initialize() {
   var yearWeekArray = getWeekNumber(today);
 
   $.ajax({
-    url: 'tweets',
+    url: 'tweets/ncaaf',
     type: 'POST',
     success: function(requestData) {
 
@@ -112,7 +112,7 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
-        fontSize: 20,
+        fontSize: 11,
         legend: 'none',
         pieSliceText: 'label',
         backgroundColor: 'transparent'
@@ -134,6 +134,37 @@ function initialize() {
     contentType: "application/json; charset=utf-8",
     dataType: 'json',
     data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
+  });
+
+  $.ajax({
+    url: 'establishments',
+    type: 'POST',
+    success: function(requestData) {
+
+      // get list of establishment objects
+      var establishments = requestData.features;
+      var establishment, lng, lat, latLng, eventText, marker;
+
+      // for each establishment create map marker with event text
+      for (x in establishments) {
+        establishment = establishments[x];
+        lng = establishment.geometry.coordinates[0];
+        lat = establishment.geometry.coordinates[1];
+        latLng = new google.maps.LatLng(lat, lng);
+        eventText = establishment.properties.name;
+
+        marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          title: eventText
+        });
+      }
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      alert("Error Loading data " + errorThrown);
+    },
+    contentType: "application/json; charset=utf-8",
+    dataType: 'json'
   });
 
 
