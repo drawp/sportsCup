@@ -3,8 +3,7 @@ from xml.dom.minidom import parseString
 from clay import config
 
 
-sportsdata_key = config.get('sportsdata.key')
-sportsdata_base_url = config.get('sportsdata.url')
+
 
 def hashtag(game, broadcast_info):
   if broadcast_info['network'] != '' or broadcast_info['satellite'] != '' or broadcast_info['cable'] != '':
@@ -12,8 +11,9 @@ def hashtag(game, broadcast_info):
   else:
     return None
 
-def sportsdatareq(week, year):
+def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
   # hardcoded response for week 7 of 2013 season for now
+  
   schedule_url = '{}{}/reg/{}/schedule.xml?api_key={}'.format(sportsdata_base_url, year, week, sportsdata_key)
   print schedule_url
   xml = parseString(urllib.urlopen(schedule_url).read()).getElementsByTagName('game')
