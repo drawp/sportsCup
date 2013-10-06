@@ -155,6 +155,29 @@
     }
 }
 
- 
+#pragma mark - alert view methods to add an event
+
+- (IBAction)addEvent:(id)sender {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Hello World!"
+                                                      message:@"This is your first UIAlertview message."
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"OK",nil];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Cancel"])
+    {
+        //replace with code to tweet the message
+        NSLog(@"Cancel was selected.");
+    }
+    else if([title isEqualToString:@"OK"])
+    {
+        NSLog(@"OK was selected.");
+    }
+}
 
 @end

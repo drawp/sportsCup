@@ -10,7 +10,7 @@
 
 @class EventDetailViewController;
 
-@interface EventsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface EventsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
     
     NSMutableArray *eventsArray;
     EventDetailViewController* eventDetailController;
@@ -19,5 +19,6 @@
 
 @property (nonatomic,retain) NSMutableArray *eventsArray;
 @property (nonatomic,retain) EventDetailViewController* eventDetailController;
+- (IBAction)addEvent:(id)sender;
 
 @end
