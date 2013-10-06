@@ -118,8 +118,7 @@
                                @"/1.1/statuses/user_timeline.json"];
                  NSDictionary *params = @{@"screen_name" : [account username],
                                           @"include_rts" : @"0",
-                                          @"trim_user" : @"1",
-                                          @"count" : @"1"};
+                                          @"trim_user" : @"1"};
                  SLRequest *request =
                  [SLRequest requestForServiceType:SLServiceTypeTwitter
                                     requestMethod:SLRequestMethodGET
@@ -146,6 +145,7 @@
                                  if ([tweetText rangeOfString:@"#sportspot"].location != NSNotFound && [tweetText hasPrefix:@"Showing"]) {
                                      // Create event and attach to user.
 
+                                     NSString *title = [tweetText substringWithRange:NSMakeRange(8, [tweetText length] - 8)];
                                      NSCalendar *calendar = [NSCalendar currentCalendar];
                                      NSDateComponents* comp1 = [[NSDateComponents alloc] init];
                                      [comp1 setDay:5];
@@ -154,7 +154,7 @@
                                      NSDate* date1 = [calendar dateFromComponents:comp1];
                                      
                                      //choose two random events
-                                     Event* event = [[Event alloc]initWithName:tweetText date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
+                                     Event* event = [[Event alloc]initWithName:title date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
                                      
                                      //add the events to the user
                                      [user addEvent:event];
