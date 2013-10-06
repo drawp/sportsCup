@@ -1,6 +1,30 @@
 /* Map View Stylings */
 html { height: 100%; }
 body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
+
+#header {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: #020202;
+  z-index: 3;
+  color: #CCC;
+  font-size: 20px;
+}
+
+#header span {
+   margin: 0px;
+   padding: 5px;
+   float: left;
+ }
+#header img {
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
 #map-canvas { height: 100%; width:100%; float:left; }
 
 /* hover stats pie chart */
@@ -9,7 +33,7 @@ body { height: 100%; margin: 0px; padding: 0; overflow: hidden;}
   top: 0px;
   left: 0px;
   opacity:0.7;
-  width: 400px;
+  width: 300px;
   height: 300px;
-  z-index: 1000;
+  z-index: 2;
 }
