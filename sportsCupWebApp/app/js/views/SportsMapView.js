@@ -112,7 +112,6 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
-        title: 'College Football Interest',
         fontSize: 20,
         legend: 'none',
         pieSliceText: 'label',
