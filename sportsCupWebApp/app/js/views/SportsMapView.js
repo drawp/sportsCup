@@ -113,7 +113,7 @@ function initialize() {
     },
     contentType: "application/json; charset=utf-8",
     dataType: 'json',
-    data: {"year":yearWeekArray[0], "week":yearWeekArray[1]}
+    data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
   });
 
 
