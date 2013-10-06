@@ -150,8 +150,8 @@
                                          if(newlineRange.location == NSNotFound) {
                                              newlineRange = [tweetText rangeOfString:@"PM,"];
                                          }
-                                         NSString *dateString = [tweetText substringFromIndex:newlineRange.location - 2];
-                                         dateString = [dateString substringToIndex:25];
+                                         NSString *dateString = [tweetText substringFromIndex:newlineRange.location - 6];
+                                         dateString = [dateString substringToIndex:30];
                                          
                                          NSCalendar *calendar = [NSCalendar currentCalendar];
                                          NSDateComponents* comp1 = [[NSDateComponents alloc] init];
@@ -244,6 +244,7 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
+                             [[[TwitterController alloc] init] setTwitterEvents:[User sharedInstance]];
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?
