@@ -52,15 +52,21 @@ def fetchsamples(hashes, access_token_key, access_token_secret, consumer_key, co
   parameters = []
   response = twitterreq(url, "GET", parameters, access_token_key, access_token_secret, consumer_key, consumer_secret)
   response = json.loads(response.read())['statuses']
+  hashes_w_tweets = {}
   for tweet in response:
     try:
       coordinates = tweet['coordinates']
     except KeyError:
       coordinates = None
     for htag in hashes.keys():
+      hashes_w_tweets['htag'] = True
       if htag.lower() in tweet['text'].lower():
+        tweets_found = True
         tweets.append({'user': tweet['user']['screen_name'],
                         'location': tweet['user']['location'],
                         'tweet': tweet['text'],
                         'coordinates': coordinates, 'game_info': hashes[htag]})
+  for htag in hashes.keys():
+    if htag not in hashes_w_tweets.keys():
+      tweets.append({'user': None, 'location': None, 'tweet': None, 'coordinates': None, 'game_info': hashes[htag]})
   return json.dumps(tweets)
