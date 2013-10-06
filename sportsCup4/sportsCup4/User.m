@@ -72,7 +72,7 @@ static User* _user = nil;
     
     TwitterController *twitterController = [[TwitterController alloc] init];
     [twitterController setTwitterUserInfo:(self)];
-    NSLog(@"%@", self);
+    [twitterController setTwitterEvents:(self)];
     
     //if there are events
     

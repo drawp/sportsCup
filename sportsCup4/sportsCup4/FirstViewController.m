@@ -23,9 +23,13 @@
 //    [test setTwitterUserInfo];
 //    [test fetchTimelineForUser:(@"starbucks")];
 //    NSLog(@"testing2");
-    User *myUser = [User sharedInstance];
-    [myUser reloadData];
-    NSLog(@"%@", myUser);
+//    User *myUser = [User sharedInstance];
+//    [myUser reloadData];
+//    sleep(1);
+//    NSLog(@"%@", [myUser userName]);
+//    NSLog(@"%@", [myUser userAddress]);
+//    NSLog(@"%@", [myUser image]);
+//    NSLog(@"%@", [myUser twitterHandle]);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
