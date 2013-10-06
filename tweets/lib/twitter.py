@@ -39,31 +39,19 @@ def twitterreq(url, method, parameters, access_token_key, access_token_secret, c
 
   return response
 
-#def fetchsamples(team_codes, team_names, player_names, lat, lng, radius):
-#def fetchsamples(hashes, lat, lng, radius):
+
 def fetchsamples(hashes, access_token_key, access_token_secret, consumer_key, consumer_secret):
   
   
   tweets = []
-  #team_codes_hash = ['#{}'.format(x) for x in team_codes]
-  #team_names = [x.lower() for x in team_names]
-  #team_names_hash = ['#{}'.format(x) for x in team_names]
-  #player_names = [x.lower() for x in player_names]
-  #player_names_hash = ['#{}'.format(x.replace(' ', '')) for x in player_names]
-  #query='football ncaaf ncaa sports gameday espn'
-  #query='#ncaaf OR #ncaa OR ncaaf OR ncaa OR college football OR {}'.format(' OR '.join(team_codes[0:10]))
   query='{}'.format(' OR '.join(hashes.keys()))
-  #geocode='&geocode={},{},{}mi'.format(lat, lng, radius)
   geocode=''
-  #url = "https://stream.twitter.com/1/statuses/filter.json?track=football,ncaa,ncaaf"#{}".format(track_tags)
   url = "https://api.twitter.com/1.1/search/tweets.json?q={}{}".format(
                 urllib.quote(query), geocode)
   print url
   parameters = []
   response = twitterreq(url, "GET", parameters, access_token_key, access_token_secret, consumer_key, consumer_secret)
-  #import pdb; pdb.set_trace()
   response = json.loads(response.read())['statuses']
-  #import ipdb; ipdb.set_trace()
   for tweet in response:
     try:
       coordinates = tweet['coordinates']
@@ -75,24 +63,4 @@ def fetchsamples(hashes, access_token_key, access_token_secret, consumer_key, co
                         'location': tweet['user']['location'],
                         'tweet': tweet['text'],
                         'coordinates': coordinates, 'game_info': hashes[htag]})
-  """for tweet in response:
-    print tweet
-    try:
-      coordinates = tweet['coordinates']
-    except KeyError:
-      coordinates = None
-    # must match an exact word
-    text_words = [x.lower() for x in tweet['text'].split(' ')]
-    #tweets.append({'user': tweet['user']['screen_name'],
-                      #'tweet': tweet['text'],
-                      #'coordinates': coordinates})
-    if (any(word.lower() in tweet['text'].lower() for word in team_names) or
-        any(word.lower() in tweet['text'].lower() for word in team_names_hash) or
-        any(word.lower() in tweet['text'].lower() for word in player_names) or
-        any(word.lower() in tweet['text'].lower() for word in player_names_hash) or
-                        len(set(text_words) & set(team_codes)) > 0 or
-                        len(set(text_words) & set(team_codes_hash)) > 0):
-      tweets.append({'user': tweet['user']['screen_name'],
-                        'tweet': tweet['text'],
-                        'coordinates': coordinates})"""
   return json.dumps(tweets)

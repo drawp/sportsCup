@@ -12,7 +12,6 @@ def hashtag(game, broadcast_info):
     return None
 
 def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
-  # hardcoded response for week 7 of 2013 season for now
   
   schedule_url = '{}{}/reg/{}/schedule.xml?api_key={}'.format(sportsdata_base_url, year, week, sportsdata_key)
   print schedule_url
@@ -27,22 +26,3 @@ def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
     if htag:
       htag_lookup[htag] = {'game_id': game.attributes['id'].value, 'broadcast': broadcast_info}
   return htag_lookup
-  """home_teams = [game.attributes['home'].value for game in xml]
-  away_teams = [game.attributes['away'].value for game in xml]
-  players = []
-  team_names = []
-  for game in xml:
-    # only care about games that are broadcast
-    broadcast_info = game.getElementsByTagName('broadcast')[0].attributes
-    if broadcast_info['network'].value != '' or broadcast_info['satellite'].value != '' or broadcast_info['cable'].value != '':
-      print broadcast_info['network'].value, broadcast_info['satellite'].value, broadcast_info['cable'].value
-      home_team = game.attributes['home'].value
-      away_team = game.attributes['away'].value
-      print home_team, away_team
-      # get info about each team
-      for team in (home_team, away_team):
-        team_url = '{}teams/{}/roster.xml?api_key={}'.format(sportsdata_base_url, team, sportsdata_key)
-        roster = parseString(urllib.urlopen(team_url).read()).getElementsByTagName('team')
-        team_names.append(roster[0].attributes['name'].value)
-        players += [player.attributes['name_full'].value for player in roster[0].getElementsByTagName('player')]
-  return home_teams, away_teams, team_names, players"""
