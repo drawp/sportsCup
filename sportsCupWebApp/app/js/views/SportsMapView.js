@@ -95,13 +95,13 @@ function initialize() {
         found = false;
         for (y in games) {
           // if game has already been found increment
-          if ( games[y][0] = gameName ) {
+          if ( games[y][0] === gameName ) {
             games[y][1] = games[y][1] + 1;
             found = true;
           }
         }
         // if game was not found in current list, add entry for it
-        if (found == false) {
+        if (found === false) {
           game = [];
           game[0] = gameName;
           game[1] = 1;
