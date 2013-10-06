@@ -52,14 +52,6 @@ ChartMarker.prototype.draw = function(data, options) {
 
   this.chart = new google.visualization.PieChart( document.getElementById('pie-chart') );
 
-  var instance = this;
-
-  function selectHandler() {
-    alert("test");
-  }
-  google.visualization.events.addListener(this.chart, 'select', selectHandler());
-
-
   this.chart.draw( data, options );
 };
 
