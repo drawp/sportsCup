@@ -9,6 +9,7 @@
 #import "AddEventViewController.h"
 #import "User.h"
 #import "Event.h"
+#import "TwitterController.h"
 
 @interface AddEventViewController ()
 
@@ -21,6 +22,7 @@
 @synthesize eventList;
 @synthesize selectedEvent;
 @synthesize selectedDate;
+@synthesize tweetString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,16 +93,10 @@
 
 - (IBAction)tweet:(id)sender {
     
-    //generate a string for the date of the event
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd 'at' HH:mm a";
-    NSString *dateString = [dateFormatter stringFromDate: self.selectedDate];
-    NSLog(@"the selected time is %@",dateString);
-    
-
+    self.tweetString = [self buildTweet];
     
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Tweet to create event"
-                                                      message:@"This is your first UIAlertview message."
+                                                      message:self.tweetString
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
                                             otherButtonTitles:@"OK",nil];
@@ -121,5 +117,44 @@
     }
 }
 
+-(NSString*)buildTweet{
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:self.self.selectedDate];
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    NSLog(@"day=%i, month=%i, year=%i",day,month, year);
+    
+    //generate a day string
+    NSString* dayStr = [NSString stringWithFormat:@"%i",day];
+    NSString *suffix_string = @"|st|nd|rd|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|st|nd|rd|th|th|th|th|th|th|th|st";
+    NSArray *suffixes = [suffix_string componentsSeparatedByString: @"|"];
+    NSString *suffix = [suffixes objectAtIndex:day];
+    NSString* dayString = [dayStr stringByAppendingString:suffix];
+    NSLog(@"the day is %@",dayString);
+    
+    //generate a month string
+    NSArray* months = [NSArray arrayWithObjects:@"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun", @"Jul", @"Aug", @"Sep", @"Oct", @"Nov", @"Dec", nil];
+    NSString* monthString = [months objectAtIndex:(month-1)];
+    NSLog(@"the month string is =%@", monthString);
+    
+    //generate a time string
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"HH:mm a";
+    NSString *timeString = [dateFormatter stringFromDate: self.selectedDate];
+    NSLog(@"the time string is %@", timeString);
+    
+    //get the week day
+    NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
+    [weekday setDateFormat: @"EEEE"];
+    NSString* weekDay = [weekday stringFromDate:self.selectedDate];
+    NSLog(@"The day of the week is: %@", weekDay);
+
+    //put everythign together
+    NSString* tweet = [NSString stringWithFormat:@"Showing %@ %@, %@, %@ %@ #sportspot %@", self.selectedEvent.name, timeString, weekDay, monthString, dayString, self.selectedEvent.hashtag];
+    NSLog(@"%@",tweet);
+    
+    return tweet;
+}
 
 @end
