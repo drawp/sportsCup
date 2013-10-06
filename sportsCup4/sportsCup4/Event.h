@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString* originalTweet;
 @property (nonatomic, retain) NSNumber* RSVPs;
 @property (nonatomic, retain) NSString* hashtag;
+@property (nonatomic, retain) NSMutableArray* userList;
 
 -(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet;
 -(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour originalTweet:(NSString*)eTweet andHashTag:(NSString*)tag;
