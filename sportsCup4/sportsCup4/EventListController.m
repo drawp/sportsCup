@@ -45,21 +45,22 @@
     NSLog(@"GAMES: %@",games);
     
     for (NSDictionary *game in games) {
-        NSString *dateString = @"";
 
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents* comp1 = [[NSDateComponents alloc] init];
-        [comp1 setDay:5];
-        [comp1 setMonth:4];
-        [comp1 setYear:2013];
-        [comp1 setHour:16];
-        NSDate* date1 = [calendar dateFromComponents:comp1];
+        NSDictionary *gameInfo = [game objectForKey:(@"game_info")];
+        NSString *name = [NSString stringWithFormat:@"%@ vs %@", [gameInfo objectForKey:(@"home_team")], [gameInfo objectForKey:(@"away_team")]];
 
-        Event* event = [[Event alloc]initWithName:dateString date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:@""];
+        NSString *hashTag = [gameInfo objectForKey:(@"hashtag")];
 
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        NSDate *date = [df dateFromString: [gameInfo objectForKey:(@"scheduled")]];
+        
+        Event* event = [[Event alloc]initWithName:name date:date hour:[NSNumber numberWithInt:9] originalTweet:@"" andHashTag:hashTag];
+        
         [events addObject:(event)];
     }
 
+    NSLog(@"%@", events);
     return events;
 }
 

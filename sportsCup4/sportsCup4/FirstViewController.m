@@ -26,11 +26,8 @@
 
 - (void)viewDidLoad
 {
-    NSArray *events = [[NSArray alloc] init];
-    EventListController *test = [[EventListController alloc] init];
-    [test getEvents:(events)];
-    
-
+//    EventListController *test = [[EventListController alloc] init];
+//    NSArray *events = [test getEvents];
 //    NSLog(@"testing");
 //    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
 //    [test setTwitterUserInfo];

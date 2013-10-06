@@ -11,7 +11,7 @@
 		7E625E391800AB980026228D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E625E371800AB980026228D /* Main_iPhone.storyboard */; };
 		7E625E3C1800ACF80026228D /* SCSimpleSLRequestDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */; };
 		7E625E3F1800CD620026228D /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E3E1800CD620026228D /* TwitterController.m */; };
-		7E625E42180122FE0026228D /* EventListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E41180122FE0026228D /* EventListController.m */; };
+		7E625E431801C8D10026228D /* EventListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E625E41180122FE0026228D /* EventListController.m */; };
 		995A9C2E1800029B0040166C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2D1800029B0040166C /* Foundation.framework */; };
 		995A9C301800029B0040166C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C2F1800029B0040166C /* CoreGraphics.framework */; };
 		995A9C321800029B0040166C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A9C311800029B0040166C /* UIKit.framework */; };
@@ -334,13 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E625E431801C8D10026228D /* EventListController.m in Sources */,
 				7E625E3F1800CD620026228D /* TwitterController.m in Sources */,
 				995A9C7B1800BF0F0040166C /* User.m in Sources */,
 				995A9C6D180015470040166C /* EventDetailViewController.m in Sources */,
 				995A9C4A1800029B0040166C /* SecondViewController.m in Sources */,
 				995A9C3E1800029B0040166C /* AppDelegate.m in Sources */,
 				995A9C781800BB010040166C /* Event.m in Sources */,
-				7E625E42180122FE0026228D /* EventListController.m in Sources */,
 				995A9C471800029B0040166C /* FirstViewController.m in Sources */,
 				999C705718010D9100AE0E28 /* AddEventViewController.m in Sources */,
 				999C70531800F03A00AE0E28 /* WebViewController.m in Sources */,
