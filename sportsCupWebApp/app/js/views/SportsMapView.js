@@ -80,7 +80,7 @@ function initialize() {
 
   $.ajax({
     url: 'tweets',
-    type: 'GET',
+    type: 'POST',
     success: function(requestData) {
 
       var data = google.visualization.arrayToDataTable([
