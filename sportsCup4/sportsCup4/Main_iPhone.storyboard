@@ -152,6 +152,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="Yvo-Sd-4Hw"/>
                     <connections>
+                        <outlet property="RSVPs" destination="ndz-pP-d09" id="vXB-NL-gg6"/>
                         <outlet property="name" destination="v9m-yG-8sJ" id="Z2x-bz-cbY"/>
                         <outlet property="origTweet" destination="nNq-wn-Xca" id="Eo9-0l-ui7"/>
                     </connections>
