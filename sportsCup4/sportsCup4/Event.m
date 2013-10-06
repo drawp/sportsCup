@@ -15,6 +15,7 @@
 @synthesize hour;
 @synthesize originalTweet;
 @synthesize RSVPs;
+@synthesize hashtag;
 
 -(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour andOriginalTweet:(NSString*)eTweet {
     
@@ -26,6 +27,20 @@
         self.RSVPs = nil;
     }
     return self;
+}
+
+-(Event*) initWithName:(NSString*)eName date:(NSDate*)eDate hour:(NSNumber*)eHour originalTweet:(NSString*)eTweet andHashTag:(NSString*)tag{
+    
+    if ( self = [super init] ) {
+        self.name = eName;
+        self.date = eDate;
+        self.hour = eHour;
+        self.originalTweet=eTweet;
+        self.hashtag = tag;
+        self.RSVPs = nil;
+    }
+    return self;
+    
 }
 
 
