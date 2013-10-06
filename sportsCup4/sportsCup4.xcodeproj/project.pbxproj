@@ -82,6 +82,7 @@
 		995A9C7A1800BF0F0040166C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		999C70511800F03A00AE0E28 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		999C70521800F03A00AE0E28 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		999C70541800F56800AE0E28 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +164,7 @@
 				995A9C3B1800029B0040166C /* sportsCup4-Prefix.pch */,
 				7E625E3A1800ACF80026228D /* SCSimpleSLRequestDemo.h */,
 				7E625E3B1800ACF80026228D /* SCSimpleSLRequestDemo.m */,
+				999C70541800F56800AE0E28 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

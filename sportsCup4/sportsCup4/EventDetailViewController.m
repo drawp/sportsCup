@@ -40,7 +40,6 @@
     //self.hour.text = self.event.hour;
     self.origTweet.text = self.event.originalTweet;
     //self.RSVPs.text = self.event.RSVPs;
-
 }
 
 - (void)didReceiveMemoryWarning
