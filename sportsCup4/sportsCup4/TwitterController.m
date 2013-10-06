@@ -164,11 +164,9 @@
                                          //choose two random events
                                          Event* event = [[Event alloc]initWithName:dateString date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
                                          [event setRSVPs:([tweet objectForKey:(@"favorite_count")])];
-                                         //add the events to the user
                                          
-                                         if (![user.eventArray containsObject:event]) {
-                                             [user addEvent:event];
-                                         }
+                                         //add the events to the user
+                                         [user addEvent:event];
                                          
                                          NSLog(@"Added event: %@", dateString);
                                          [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];

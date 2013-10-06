@@ -13,7 +13,7 @@ function getWeekNumber(d) {
   // Get first day of year
   var yearStart = new Date(d.getFullYear(),0,1);
   // TODO: Figure out week of football season, hardcode 7 for now
-  var weekNo = 7;
+  var weekNo = 5;
   // Return array of year and week number
   return [d.getFullYear(), weekNo];
 }
@@ -143,7 +143,7 @@ function initialize() {
 
       // get list of establishment objects
       var establishments = requestData.features;
-      var establishment, lng, lat, latLng, eventText, marker;
+      var establishment, lng, lat, latLng, eventText, infoWindow, marker;
 
       // for each establishment create map marker with event text
       for (x in establishments) {
@@ -151,12 +151,21 @@ function initialize() {
         lng = establishment.geometry.coordinates[0];
         lat = establishment.geometry.coordinates[1];
         latLng = new google.maps.LatLng(lat, lng);
-        eventText = establishment.properties.name;
+        // get establish name and content
+        eventText = '<div class="info-window"><div id="info-header">' + establishment.properties.name
+          + '</div><div id="info-content">' + establishment.properties.events.join(" ") + '</div></div>';
+
+        var infoWindow = new google.maps.InfoWindow({
+          content: eventText
+        });
 
         marker = new google.maps.Marker({
           position: latLng,
-          map: map,
-          title: eventText
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infoWindow.open(map,marker);
         });
       }
     },
