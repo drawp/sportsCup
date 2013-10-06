@@ -286,11 +286,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="655" y="847"/>
         </scene>
-        <!--Second View Controller - my table-->
+        <!--Second View Controller - my events-->
         <scene sceneID="BUf-Ou-xSx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h0G-PW-DSL" customClass="SecondViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="my table" image="second" id="mhs-9H-hkO"/>
+                    <tabBarItem key="tabBarItem" title="my events" image="second" id="mhs-9H-hkO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oBw-He-lpG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -307,6 +307,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

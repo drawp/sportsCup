@@ -141,15 +141,14 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
-                             NSLog(@"tweets: %@", tweets);
                              for (NSDictionary *tweet in tweets) {
                                  @try {
                                      NSString *tweetText = [tweet objectForKey:(@"text")];
                                      if ([tweetText rangeOfString:@"#sportspot"].location != NSNotFound && [tweetText hasPrefix:@"Showing"]) {
                                          // Create event and attach to user.
-                                         NSRange newlineRange = [tweetText rangeOfString:@"am,"];
+                                         NSRange newlineRange = [tweetText rangeOfString:@"AM,"];
                                          if(newlineRange.location == NSNotFound) {
-                                             newlineRange = [tweetText rangeOfString:@"pm,"];
+                                             newlineRange = [tweetText rangeOfString:@"PM,"];
                                          }
                                          NSString *dateString = [tweetText substringFromIndex:newlineRange.location - 2];
                                          dateString = [dateString substringToIndex:19];
@@ -167,6 +166,8 @@
                                          [event setRSVPs:([tweet objectForKey:(@"favorite_count")])];
                                          //add the events to the user
                                          [user addEvent:event];
+                                         NSLog(@"Added event: %@", dateString);
+                                         [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                                      }
                                  }
                                  @catch (NSException * e) {
@@ -213,7 +214,7 @@
                                           @"status": status};
                  SLRequest *request =
                  [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                    requestMethod:SLRequestMethodGET
+                                    requestMethod:SLRequestMethodPOST
                                               URL:url
                                        parameters:params];
                  
@@ -231,7 +232,6 @@
                              [NSJSONSerialization
                               JSONObjectWithData:responseData
                               options:NSJSONReadingAllowFragments error:&jsonError];
-                             NSLog(@"tweet response: %@", response);
                          }
                          else {
                              // The server did not respond successfully... were we rate-limited?

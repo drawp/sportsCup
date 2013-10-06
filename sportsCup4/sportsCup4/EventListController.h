@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface EventListController : NSObject
-- (NSArray *)getEvents;
+- (NSMutableArray *)getEvents;
 @end

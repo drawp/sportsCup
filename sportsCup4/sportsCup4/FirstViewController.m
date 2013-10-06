@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-#import "SCSimpleSLRequestDemo.h"
+#import "TwitterController.h"
 #import "EventListController.h"
 #import "User.h"
 #import "Constants.h"
@@ -26,8 +26,13 @@
 
 - (void)viewDidLoad
 {
-    EventListController *test = [[EventListController alloc] init];
-    NSArray *events = [test getEvents];
+//    EventListController *test = [[EventListController alloc] init];
+//    NSArray *events = [test getEvents];
+//    User *myUser = [User sharedInstance];
+//    TwitterController *test = [[TwitterController alloc] init];
+//    [test tweet:myUser withArg2:@"test tweet"];
+//    NSArray *events = [test tweet user:myUser status:@"test tweet"];
+    
 //    NSLog(@"testing");
 //    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
 //    [test setTwitterUserInfo];
@@ -42,8 +47,6 @@
 //    NSLog(@"%@", [myUser twitterHandle]);
 
     [super viewDidLoad];
-    
-    NSLog(@"the user name is %@",[User sharedInstance].userName);
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refresh)
