@@ -159,11 +159,12 @@
                                          [comp1 setDay:5];
                                          [comp1 setMonth:4];
                                          [comp1 setYear:2013];
+                                         [comp1 setHour:16];
                                          NSDate* date1 = [calendar dateFromComponents:comp1];
                                          
                                          //choose two random events
                                          Event* event = [[Event alloc]initWithName:dateString date:date1 hour:[NSNumber numberWithInt:9] andOriginalTweet:tweetText];
-                                         [event setRSVPs:([tweet objectForKey:(@"retweet_count")])];
+                                         [event setRSVPs:([tweet objectForKey:(@"favorite_count")])];
                                          //add the events to the user
                                          [user addEvent:event];
                                      }
@@ -185,5 +186,62 @@
     }
 }
 
+
+- (void)tweet:(User *)user withArg2:(NSString *)status
+{
+    //  Step 0: Check that the user has local Twitter accounts
+    if ([self userHasAccessToTwitter]) {
+        //  Step 1:  Obtain access to the user's Twitter accounts
+        ACAccountType *twitterAccountType = [self.accountStore
+                                             accountTypeWithAccountTypeIdentifier:
+                                             ACAccountTypeIdentifierTwitter];
+        [self.accountStore
+         requestAccessToAccountsWithType:twitterAccountType
+         options:NULL
+         completion:^(BOOL granted, NSError *error) {
+             if (granted) {
+                 //  Step 2:  Create a request
+                 NSArray *twitterAccounts =
+                 [self.accountStore accountsWithAccountType:twitterAccountType];
+                 ACAccount *account = [twitterAccounts lastObject];
+                 
+                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
+                               @"/1.1/statuses/update.json"];
+                 NSDictionary *params = @{@"screen_name" : [account username],
+                                          @"include_rts" : @"0",
+                                          @"trim_user" : @"1",
+                                          @"status": status};
+                 SLRequest *request =
+                 [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                    requestMethod:SLRequestMethodGET
+                                              URL:url
+                                       parameters:params];
+                 
+                 //  Attach an account to the request
+                 [request setAccount:[twitterAccounts lastObject]];
+                 
+                 //  Step 3:  Execute the request
+                 [request performRequestWithHandler:^(NSData *responseData,
+                                                      NSHTTPURLResponse *urlResponse,
+                                                      NSError *error) {
+                     if (responseData) {
+                         if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
+                             NSError *jsonError;
+                             NSDictionary *response =
+                             [NSJSONSerialization
+                              JSONObjectWithData:responseData
+                              options:NSJSONReadingAllowFragments error:&jsonError];
+                             NSLog(@"tweet response: %@", response);
+                         }
+                         else {
+                             // The server did not respond successfully... were we rate-limited?
+                             NSLog(@"The response status code is %d", urlResponse.statusCode);
+                         }
+                     }
+                 }];
+             }
+         }];
+    }
+}
 
 @end

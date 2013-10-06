@@ -23,7 +23,7 @@
         self.name = eName;
         self.date = eDate;
         self.hour = eHour;
-        self.originalTweet=eTweet;
+        self.originalTweet = eTweet;
         self.RSVPs = nil;
     }
     return self;

@@ -12,4 +12,5 @@
 @interface TwitterController : NSObject
 - (void)setTwitterUserInfo:(User *)user;
 - (void)setTwitterEvents:(User *)user;
+- (void)tweet:(User *)user withArg2:(NSString *)status;
 @end
