@@ -166,8 +166,6 @@
                                          [event setRSVPs:([tweet objectForKey:(@"favorite_count")])];
                                          //add the events to the user
                                          [user addEvent:event];
-                                         NSLog(@"Added event: %@", dateString);
-                                         [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataRetrieved object:nil];
                                      }
                                  }
                                  @catch (NSException * e) {
