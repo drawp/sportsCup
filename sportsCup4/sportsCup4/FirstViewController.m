@@ -52,6 +52,10 @@
                                              selector:@selector(refresh)
                                                  name:kUserDataRetrieved
                                                object:nil];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"stars.jpg"]];
+    
+    
 
 }
 
