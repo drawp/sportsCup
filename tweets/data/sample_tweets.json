@@ -2,16 +2,19 @@
   "features": [
     { "type": "Feature",
       "geometry": {"type": "Point", "coordinates": [-122.424906, 37.801358]},
-      "properties": {"name": "Black Magic Voodoo Lounge", "events": ["Lions at Packers, Sunday, 10 AM"]}
+      "properties": {"name": "Black Magic Voodoo Lounge", "events": ["Lions at Packers, Sunday, 10 AM", "Broncos at Cowboys, Sunday, 1 PM"]}
       },
      { "type": "Feature",
       "geometry": {"type": "Point", "coordinates": [-122.415615, 37.758671]},
-      "properties": {"name": "Shotwell's", "events": ["Ravens at Dolphins, Sunday, 10 AM"]}
+      "properties": {"name": "Shotwell's", "events": ["Ravens at Dolphins, Sunday, 10 AM", "Broncos at Cowboys, Sunday, 1 PM"]}
       },
       { "type": "Feature",
       "geometry": {"type": "Point", "coordinates": [-122.50713, 37.760198]},
-      "properties": {"name": "Pittsburgh's Pub", "events": ["Saints at Bears, 10 AM"]}
+      "properties": {"name": "Pittsburgh's Pub", "events": ["Saints at Bears, 10 AM", "Broncos at Cowboys, Sunday, 1 PM"]}
       }
 
      ]
 }
+
+
+
