@@ -51,6 +51,19 @@ ChartMarker.prototype.draw = function(data, options) {
   var marker = this;
 
   this.chart = new google.visualization.PieChart( document.getElementById('pie-chart') );
+
+  var instance = this;
+
+  function selectHandler() {
+    var selectedItem = instance.chart.getSelection()[0];
+    if (selectedItem) {
+      var topping = data.getValue(selectedItem.row, 0);
+      alert('The user selected ' + topping);
+    }
+  }
+  google.visualization.events.addListener(this.chart, 'select', selectHandler());
+
+
   this.chart.draw( data, options );
 };
 
@@ -112,6 +125,7 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
+        title: 'test',
         fontSize: 11,
         legend: 'none',
         pieSliceText: 'label',
@@ -126,15 +140,7 @@ function initialize() {
         }
       });
 
-      function selectHandler() {
-        var selectedItem = marker.getSelection()[0];
-        if (selectedItem) {
-          var topping = data.getValue(selectedItem.row, 0);
-          alert('The user selected ' + topping);
-        }
-      }
 
-      google.visualization.events.addListener(marker, 'select', selectHandler);
       marker.draw(data, options);
 
     },
