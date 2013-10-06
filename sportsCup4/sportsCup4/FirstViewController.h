@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController {
+    
+}
+
+@property (nonatomic, strong) IBOutlet UILabel* name;
+@property (nonatomic, strong) IBOutlet UIImageView* img;
+@property (nonatomic, strong) IBOutlet UILabel* twitterHandle;
+@property (nonatomic, strong) IBOutlet UILabel* address;
 
 @end

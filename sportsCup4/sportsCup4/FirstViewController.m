@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SCSimpleSLRequestDemo.h"
+#import "User.h"
 
 @interface FirstViewController ()
 
@@ -15,15 +16,27 @@
 
 @implementation FirstViewController
 
+@synthesize name;
+@synthesize img;
+@synthesize twitterHandle;
+@synthesize address;
+
+
 - (void)viewDidLoad
 {
-    NSLog(@"testing");
-    SCSimpleSLRequestDemo *test = [[SCSimpleSLRequestDemo alloc] init];
-    [test fetchTimelineForUser:(@"ID_AA_Carmack")];
-    NSLog(@"testing2");
+
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.name.text = [User sharedInstance].userName;
+    self.twitterHandle.text =[User sharedInstance].userAddress;
+    self.twitterHandle.text =[User sharedInstance].twitterHandle;
+    
+    if ([User sharedInstance].image) {
+        self.img = [[UIImageView alloc] initWithImage:[User sharedInstance].image];
+    }
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {
