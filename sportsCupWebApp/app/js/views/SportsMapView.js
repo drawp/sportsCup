@@ -111,7 +111,7 @@ function initialize() {
     error: function(xhr, textStatus, errorThrown) {
       alert("Error Loading data " + errorThrown);
     },
-    contentType: 'application/json',
+    contentType: "application/json; charset=utf-8",
     dataType: 'json',
     data: '{"year":' + yearWeekArray[0] + ', "week":' + yearWeekArray[1] + '}'
   });
