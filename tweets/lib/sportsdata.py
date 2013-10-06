@@ -88,8 +88,14 @@ def sportsdatareq(week, year, sportsdata_key, sportsdata_base_url):
                       'cable': broadcast['cable'].value}
     htag = hashtag(game, broadcast_info)
     if htag:
-      hometeam = team_lookup[game.attributes['home'].value]
-      awayteam = team_lookup[game.attributes['away'].value]
+      try:
+        hometeam = team_lookup[game.attributes['home'].value]
+      except KeyError:
+        hometeam = 'Matties'
+      try:
+        awayteam = team_lookup[game.attributes['away'].value]
+      except KeyError:
+        awayteam = 'Matties'
       htag_lookup[htag] = {'game_id': game.attributes['id'].value, 'broadcast': broadcast_info,
                             'home_team': hometeam, 'away_team': awayteam, 'hashtag': htag}
   return htag_lookup
