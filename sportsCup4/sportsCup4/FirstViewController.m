@@ -40,6 +40,8 @@
 
     [super viewDidLoad];
     
+    NSLog(@"the user name is %@",[User sharedInstance].userName);
+    
     self.name.text = [User sharedInstance].userName;
     self.twitterHandle.text =[User sharedInstance].userAddress;
     self.twitterHandle.text =[User sharedInstance].twitterHandle;

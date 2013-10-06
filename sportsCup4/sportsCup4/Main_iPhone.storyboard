@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="-108"/>
+            <point key="canvasLocation" x="655" y="-473"/>
         </scene>
         <!--Events Table View Controller - Events-->
         <scene sceneID="Mmt-bt-bws">
@@ -94,7 +94,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUz-QK-RHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="545"/>
+            <point key="canvasLocation" x="1148" y="180"/>
         </scene>
         <!--Event Detail View Controller - Event Details-->
         <scene sceneID="OV7-L9-wTS">
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAF-qd-oJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637" y="553"/>
+            <point key="canvasLocation" x="1595" y="180"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -165,6 +165,24 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="FdZ-ph-8nX">
+            <objects>
+                <viewController id="tY4-ad-wQJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ut1-df-K8a"/>
+                        <viewControllerLayoutGuide type="bottom" id="lZm-XM-573"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M5w-KK-Ob3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTx-KX-BjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="847"/>
+        </scene>
         <!--Second View Controller - my table-->
         <scene sceneID="BUf-Ou-xSx">
             <objects>
@@ -182,7 +200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhG-Q5-sPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="545"/>
+            <point key="canvasLocation" x="647" y="180"/>
         </scene>
     </scenes>
     <resources>

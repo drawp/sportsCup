@@ -141,6 +141,7 @@
 				995A9C3C1800029B0040166C /* AppDelegate.h */,
 				995A9C3D1800029B0040166C /* AppDelegate.m */,
 				995A9C75180091810040166C /* Model */,
+				999C70501800EE2A00AE0E28 /* views */,
 				995A9C741800913E0040166C /* Controllers */,
 				995A9C341800029B0040166C /* Supporting Files */,
 			);
@@ -201,14 +202,21 @@
 		995A9C75180091810040166C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				995A9C71180018AE0040166C /* Cell.h */,
-				995A9C72180018AE0040166C /* Cell.m */,
 				995A9C761800BB010040166C /* Event.h */,
 				995A9C771800BB010040166C /* Event.m */,
 				995A9C791800BF0F0040166C /* User.h */,
 				995A9C7A1800BF0F0040166C /* User.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		999C70501800EE2A00AE0E28 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				995A9C71180018AE0040166C /* Cell.h */,
+				995A9C72180018AE0040166C /* Cell.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
