@@ -125,6 +125,7 @@ function initialize() {
       var data = google.visualization.arrayToDataTable(games);
 
       var options = {
+        title: 'test',
         fontSize: 11,
         legend: 'none',
         pieSliceText: 'label',
