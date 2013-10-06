@@ -169,9 +169,12 @@ function initialize() {
           map: map
         }));
 
-        google.maps.event.addListener(markers[x], 'click', function() {
-          infoWindows[x].open(map,markers[x]);
-        });
+        google.maps.event.addListener(markers[x], 'click', function (a) {
+          return function() {
+            infoWindows[a].open(map,markers[a]);
+          }
+        }(x));
+
       }
     },
     error: function(xhr, textStatus, errorThrown) {
