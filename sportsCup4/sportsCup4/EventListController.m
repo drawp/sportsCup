@@ -27,7 +27,6 @@
 
 - (NSArray *)getEvents
 {
- 
     NSMutableArray *events = [[NSMutableArray alloc] init];
     NSString *post = [NSString stringWithFormat:@"{\"year\":2013, \"week\":7}"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
