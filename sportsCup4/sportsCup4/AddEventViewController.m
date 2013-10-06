@@ -45,6 +45,10 @@
                           action:@selector(selectDate)
                 forControlEvents:UIControlEventValueChanged];
     
+    self.selectedEvent = [eventList objectAtIndex:0];
+    if (self.selectedEvent.date) {
+        datePicker.date = self.selectedEvent.date;
+    }
 	// Do any additional setup after loading the view.
 }
 
@@ -115,13 +119,12 @@
     else if([title isEqualToString:@"OK"])
     {
         [[[TwitterController alloc] init] tweet:[User sharedInstance] withArg2:self.tweetString];
-        [[[TwitterController alloc] init] setTwitterEvents:[User sharedInstance]];
         NSLog(@"OK was selected.");
     }
 }
 
 -(NSString*)buildTweet{
-    
+    [self selectDate];
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:self.self.selectedDate];
     NSInteger day = [components day];
     NSInteger month = [components month];
