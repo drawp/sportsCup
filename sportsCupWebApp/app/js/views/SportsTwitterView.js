@@ -158,7 +158,7 @@ function initialize() {
         latLng = new google.maps.LatLng(lat, lng);
         // get establish name and content
         eventText = '<div class="info-window"><div id="info-header">' + establishment.properties.name
-          + '</div><div id="info-content">' + establishment.properties.events.join(" ") + '</div></div>';
+          + '</div><div id="info-content">' + establishment.properties.events.join("<br>") + '</div></div>';
 
         infoWindows.push ( new google.maps.InfoWindow({
           content: eventText
